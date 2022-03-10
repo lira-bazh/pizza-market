@@ -1,13 +1,16 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './root.scss'
+import MainPage from '../components/mainPage'
+// import Basket from '../components/basket'
 
 const Root = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<div>This is React Router v6!</div>} />
-        <Route path="/test" element={<div>This is TEST!</div>} />
-        <Route path="*" element={<h3>404</h3>} />
+        <Route exact path="/" element={<MainPage />} />
+        {/* <Route exact path="/basket" component={Basket} /> */}
+        {/* <Route path="*" component={NotFound} /> */}
       </Routes>
     </BrowserRouter>
   )

@@ -1,5 +1,6 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import FaviconsWebpackPlugin from 'favicons-webpack-plugin'
 import { resolve } from 'path'
 
 const __dirname = process.cwd()
@@ -42,6 +43,11 @@ const config = {
     }),
     new HtmlWebpackPlugin({
       template: 'client/index.html'
+    }),
+    new FaviconsWebpackPlugin({
+      logo: 'client/assets/image/favicon.ico',
+      publicPath: '/',
+      prefix: 'assets/'
     })
   ]
 }
