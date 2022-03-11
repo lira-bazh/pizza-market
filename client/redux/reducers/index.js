@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
-import weeks from './weeks.js'
+import products from './products.js'
 
 const createRootReducer = () =>
   combineReducers({
-    weeks
+    products
   })
 
 export default createRootReducer
