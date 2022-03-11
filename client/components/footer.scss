@@ -3,7 +3,7 @@
 .footer {
   background-color: $footer-bg-color;
   color: $footer-text-color;
-  min-height: 90px;
+  min-height: 80px;
 
   &__content {
     @extend %width-offset;

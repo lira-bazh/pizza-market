@@ -1,6 +1,6 @@
 import React from "react"
 import Footer from "./footer";
-import Header from "./header";
+import Header from "./header/header";
 import ContentMainPage from "./contentMainPage"
 import './mainPage.scss'
 
