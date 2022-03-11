@@ -1,0 +1,6 @@
+@import '../assets/styles/var';
+
+.wrapper-content {
+  @extend %width-offset;
+  flex-grow: 1;
+}

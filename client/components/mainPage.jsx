@@ -1,12 +1,14 @@
 import React from "react"
-import './mainPage.scss'
 import Footer from "./footer";
+import Header from "./header";
+import ContentMainPage from "./contentMainPage"
+import './mainPage.scss'
 
 const MainPage = () => {
   return(
     <div className="main-page">
-      <div className="header"></div>
-      <div className="wrapper-content"></div>
+      <Header />
+      <ContentMainPage />
       <Footer />
     </div>
   );
