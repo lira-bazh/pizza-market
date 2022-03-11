@@ -4,3 +4,13 @@
   @extend %width-offset;
   flex-grow: 1;
 }
+
+.content-title {
+  font-family: 'Proxima Nova Bold';
+  font-size: 32px;
+  line-height: 38.98px;
+}
+
+.content-list {
+  display: flex;
+}
