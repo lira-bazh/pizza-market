@@ -2,6 +2,7 @@ import React from "react"
 import axios from "axios"
 import { useSelector, useDispatch } from 'react-redux'
 import { uploadProducts } from '../redux/reducers/products'
+import ProductItem from "./productItem"
 import './contentMainPage.scss'
 
 const ContentMainPage = () => {
@@ -21,12 +22,12 @@ const ContentMainPage = () => {
   return(
     <div className="wrapper-content">
       <div className="nav">Навигация по списку</div>
-      <div className="content">
-        <div className="content-title">Все пиццы</div>
-        <div className="content-list">
+      <div className="main-page__content">
+        <div className="main-page__content-title">Все пиццы</div>
+        <div className="main-page__content-list">
           { goods.map(it => {
               return (
-                <div key={it.id}>{it.name}</div>
+                <ProductItem key={it.id} product={it}/>
               )})}
         </div>
       </div>

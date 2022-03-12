@@ -1,16 +1,16 @@
 import React from "react"
 import Footer from "./footer";
 import Header from "./header/header";
+import Page from "./page";
 import ContentMainPage from "./contentMainPage"
-import './mainPage.scss'
 
 const MainPage = () => {
   return(
-    <div className="main-page">
+    <Page>
       <Header />
       <ContentMainPage />
       <Footer />
-    </div>
+    </Page>
   );
 };
 
