@@ -19,16 +19,15 @@ const ContentMainPage = () => {
       })
   }, [])
 
-  return(
-    <div className="wrapper-content">
+  return (
+    <div className="main-page">
       <div className="nav">Навигация по списку</div>
       <div className="main-page__content">
         <div className="main-page__content-title">Все пиццы</div>
         <div className="main-page__content-list">
-          { goods.map(it => {
-              return (
-                <ProductItem key={it.id} product={it}/>
-              )})}
+          {goods.map((it) => {
+            return <ProductItem key={it.id} product={it} />;
+          })}
         </div>
       </div>
     </div>
