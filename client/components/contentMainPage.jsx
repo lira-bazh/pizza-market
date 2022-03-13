@@ -2,7 +2,7 @@ import React from "react"
 import axios from "axios"
 import { useSelector, useDispatch } from 'react-redux'
 import { uploadProducts } from '../redux/reducers/products'
-import ProductItem from "./productItem"
+import ProductItem from "./product/productItem"
 import './contentMainPage.scss'
 
 const ContentMainPage = () => {
@@ -14,7 +14,6 @@ const ContentMainPage = () => {
     axios
       .get(urlGetData)
       .then((it) => {
-        console.log(it.data)
         dispatch(uploadProducts(it.data.pizzas))
       })
   }, [])

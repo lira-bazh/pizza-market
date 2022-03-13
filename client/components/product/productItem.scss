@@ -1,4 +1,4 @@
-@import '../assets/styles/var';
+@import '../../assets/styles/var';
 
 .main-page-product-item {
   margin-bottom: 5vh;
@@ -29,31 +29,36 @@
     padding: 5px;
   }
 
-  .type-dough {
-    height: 50%;
+  &__result {
+    width: 100%;
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-
-    input {
-      display: none;
-    }
-
-    &__label {
-      display: inline-block;
-      flex-grow: 1;
-      border-radius: 5px;
-      line-height: 2em;
-      text-align: center;
-    }
-
-    &__label:hover {
-      background-color: rgba(255,255,255,0.3);
-    }
-
-    input:checked + label {
-      background-color: white;
-    }
 
   }
+
+  &__price {
+    flex-grow: 1;
+    text-align: center;
+    line-height: 2em;
+  }
+
+  &__add {
+    min-width: 45%;
+
+    button {
+      width: 100%;
+      background: none;
+      border: 1px solid #EB5A1E;
+      border-radius: 30px;
+      line-height: 2em;
+      color: #EB5A1E;
+    }
+
+    button:hover {
+      background-color: #FE5F1E;
+      color: white;
+    }
+  }
+
 }
