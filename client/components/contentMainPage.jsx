@@ -18,6 +18,10 @@ const ContentMainPage = () => {
       })
   }, [])
 
+  function getPrice(size) {
+    return this.prices.find((item) => item.size === +size).price
+  }
+
   return (
     <div className="main-page">
       <div className="nav">Навигация по списку</div>
@@ -25,7 +29,7 @@ const ContentMainPage = () => {
         <div className="main-page__content-title">Все пиццы</div>
         <div className="main-page__content-list">
           {goods.map((it) => {
-            return <ProductItem key={it.id} product={it} />;
+            return <ProductItem key={it.id} product={{...it, getPrice}} />;
           })}
         </div>
       </div>

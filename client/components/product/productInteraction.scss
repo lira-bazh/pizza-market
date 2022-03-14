@@ -1,0 +1,39 @@
+@import '../../assets/styles/var';
+
+.main-page .product-item .interaction {
+  min-height: 30%;
+  width: 100%;
+
+  &__result {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  &__price {
+    flex-grow: 1;
+    text-align: center;
+    line-height: 2em;
+  }
+
+  &__add {
+    min-width: 45%;
+
+    button {
+      width: 100%;
+      background: none;
+      border: 1px solid #EB5A1E;
+      border-radius: 30px;
+      line-height: 2em;
+      color: #EB5A1E;
+    }
+
+    button:hover {
+      background-color: #FE5F1E;
+      color: white;
+    }
+  }
+
+}

@@ -11,6 +11,7 @@ const SettingsButton = (props) => {
         type="radio"
         defaultChecked={props.checked === "true"}
         disabled={props.disable}
+        onChange={props.change}
       />
       <label htmlFor={`${props.type}__${props.value}`}>{props.name}</label>
     </div>

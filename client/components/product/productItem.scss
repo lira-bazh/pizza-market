@@ -1,11 +1,10 @@
 @import '../../assets/styles/var';
 
-.main-page-product-item {
+.main-page .product-item {
   margin-bottom: 5vh;
   margin-right: 0.5vw;
   min-width: 150px;
   width: 15vw;
-  // border: black 1px solid;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -16,49 +15,11 @@
   }
 
   &__title {
+    min-height: 10%;
     margin: 15px 0;
     font-family: 'Proxima Nova Bold';
-    font-size: 1.2em;
-  }
-
-  &__settings {
-    min-height: 20%;
-    width: 100%;
-    background-color: $product-item-settings-bgcolor;
-    border-radius: 10px;
-    padding: 5px;
-  }
-
-  &__result {
-    width: 100%;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-
-  }
-
-  &__price {
-    flex-grow: 1;
+    font-size: 1.1em;
     text-align: center;
-    line-height: 2em;
-  }
-
-  &__add {
-    min-width: 45%;
-
-    button {
-      width: 100%;
-      background: none;
-      border: 1px solid #EB5A1E;
-      border-radius: 30px;
-      line-height: 2em;
-      color: #EB5A1E;
-    }
-
-    button:hover {
-      background-color: #FE5F1E;
-      color: white;
-    }
   }
 
 }

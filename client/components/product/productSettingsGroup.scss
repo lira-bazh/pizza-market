@@ -1,0 +1,14 @@
+@import '../../assets/styles/var';
+
+.main-page .product-item .interaction__settings {
+    width: 100%;
+    background-color: $product-item-settings-bgcolor;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+.settings {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
