@@ -1,9 +1,11 @@
 import React, { useState } from "react"
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { addProductToBasket } from "../../redux/reducers/products";
 import ProductSettingsGroup from "./productSettingsGroup";
 import './productInteraction.scss'
 
 const ProductInteraction = (props) => {
+  const dispatch = useDispatch()
   const defaultSettings = useSelector((s) => s.products.defaultPizzaSettings);
 
   const getDefaultPizzaParam = (defSettings) => {
@@ -26,19 +28,27 @@ const ProductInteraction = (props) => {
     setPizzaParam(newPizzaParam)
   }
 
-  return(
+  const addPizzaToBasket = (e) => {
+      dispatch(addProductToBasket(pizzaParam));
+  }
+
+  return (
     <div className="interaction">
-        <ProductSettingsGroup product={props.product} default={defaultSettings} change={changeParam}/>
-        <div className="interaction__result">
-          <div className="interaction__price">
-            {props.product.prices[0].price}
-          </div>
-          <div className="interaction__add">
-            <button>Добавить</button>
-          </div>
+      <ProductSettingsGroup
+        product={props.product}
+        default={defaultSettings}
+        change={changeParam}
+      />
+      <div className="interaction__result">
+        <div className="interaction__price">
+          {props.product.prices[0].price}
+        </div>
+        <div className="interaction__add">
+          <button onClick={addPizzaToBasket}>Добавить</button>
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
 ProductInteraction.propTypes = {};

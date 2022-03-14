@@ -37,7 +37,10 @@ export default (state = initialState, action) => {
     }
     case ADD_PRODUCT: {
       const productIndex = state.basket.findIndex(
-        (item) => item.id === action.id
+        (item) =>
+          item.id === action.product.id &&
+          item.size === action.product.size &&
+          item["type-dough"] === action.product["type-dough"]
       );
       if (productIndex >= 0) {
         const newBasket = [...state.basket];
@@ -49,12 +52,15 @@ export default (state = initialState, action) => {
       }
       return {
         ...state,
-        basket: [...state.basket, { id: action.id, amount: 1 }],
+        basket: [...state.basket, { ...action.product, amount: 1 }],
       };
     }
     case DELETE_PRODUCT: {
       const productIndex = state.basket.findIndex(
-        (item) => item.id === action.id
+        (item) =>
+          item.id === action.product.id &&
+          item.size === action.product.size &&
+          item["type-dough"] === action.product["type-dough"]
       );
       if (productIndex >= 0) {
         if (state.basket[productIndex].amount > 1) {
@@ -95,8 +101,8 @@ export function uploadProducts(products) {
   return { type: UPLOAD_PRODUCTS, products };
 }
 
-export function addProductToBasket(id) {
-  return { type: ADD_PRODUCT, id };
+export function addProductToBasket(product) {
+  return { type: ADD_PRODUCT, product };
 }
 
 export function removeProductFromBasket(id) {
