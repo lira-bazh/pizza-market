@@ -19,6 +19,10 @@
     font-family: 'Proxima Nova';
   }
 
+  &__price::after {
+    content: " ₽";
+  }
+
   &__add {
     min-width: 45%;
     display: flex;

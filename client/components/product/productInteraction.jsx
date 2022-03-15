@@ -58,7 +58,7 @@ const ProductInteraction = (props) => {
         change={changeParam}
       />
       <div className="interaction__result">
-        <div className="interaction__price">{pizzaParam.price} ₽</div>
+        <div className="interaction__price">{pizzaParam.price}</div>
         <div className="interaction__add">
           <button onClick={addPizzaToBasket}>
             <FontAwesomeIcon icon={faPlus} />
