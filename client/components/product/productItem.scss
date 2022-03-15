@@ -10,6 +10,8 @@
   justify-content: flex-start;
   align-items:center;
 
+  font-family: 'Proxima Nova Bold';
+
   img{
     width: 95%;
   }
@@ -17,7 +19,7 @@
   &__title {
     min-height: 10%;
     margin: 15px 0;
-    font-family: 'Proxima Nova Bold';
+    font-family: 'Proxima Nova Extra Bold';
     font-size: 1.1em;
     text-align: center;
   }

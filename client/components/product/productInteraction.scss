@@ -16,24 +16,60 @@
     flex-grow: 1;
     text-align: center;
     line-height: 2em;
+    font-family: 'Proxima Nova';
   }
 
   &__add {
     min-width: 45%;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
 
     button {
       width: 100%;
       background: none;
-      border: 1px solid #EB5A1E;
+      border: 1px solid $orange-color;
       border-radius: 30px;
-      line-height: 2em;
-      color: #EB5A1E;
+      font-family: 'Proxima Nova Bold';
+      line-height: 2.5em;
+      color: $orange-color;
+      padding: 0 10px;
+
+      svg {
+        margin-right: 5px;
+      }
     }
 
     button:hover {
-      background-color: #FE5F1E;
-      color: white;
+      background-color: $orange-color;
+      color: $text-color-dark-bg;
     }
+
+    button:active {
+      background-color: $dark-orange-color;
+      color: $text-color-dark-bg;
+    }
+
+  }
+
+  &__counter {
+    display: inline-block;
+    background-color: $orange-color;
+    color: $text-color-dark-bg;
+    border-radius: 47%;
+    margin-left: 5px;
+    line-height: 1.5em;
+    padding: 0 7px;
+  }
+
+  &__add button:hover &__counter{
+    background-color: $text-color-dark-bg;
+    color: $orange-color;
+  }
+
+
+  &__counter_hidden {
+    display: none;
   }
 
 }

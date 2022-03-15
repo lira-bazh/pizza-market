@@ -14,7 +14,7 @@
     transition: color 0.5s, transform 0.5s;
 
     &:hover {
-      color: $social-link-hover-color;
+      color: $dark-orange-color;
       transform: rotate(360deg);
     }
   }

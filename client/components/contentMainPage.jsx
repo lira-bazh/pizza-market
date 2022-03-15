@@ -28,8 +28,8 @@ const ContentMainPage = () => {
       <div className="main-page__content">
         <div className="main-page__content-title">Все пиццы</div>
         <div className="main-page__content-list">
-          {goods.map((it) => {
-            return <ProductItem key={it.id} product={{...it, getPrice}} />;
+          {goods.map((product) => {
+            return <ProductItem key={product.id} product={{...product, getPrice}} />;
           })}
         </div>
       </div>

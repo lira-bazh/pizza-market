@@ -6,7 +6,7 @@ const CHANGE_SORT = "CHANGE_SORT";
 
 const initialState = {
   all: [],
-  basket: [],
+  basket: {},
   sort: "title",
   defaultPizzaSettings: [
     {
@@ -36,24 +36,17 @@ export default (state = initialState, action) => {
       };
     }
     case ADD_PRODUCT: {
-      const productIndex = state.basket.findIndex(
-        (item) =>
-          item.id === action.product.id &&
-          item.size === action.product.size &&
-          item["type-dough"] === action.product["type-dough"]
-      );
-      if (productIndex >= 0) {
-        const newBasket = [...state.basket];
-        newBasket[productIndex].amount += 1;
+      const {id, ...paramCollection} = action.product
+      if (id in state.basket) {
         return {
           ...state,
-          basket: newBasket,
-        };
+          basket: { ...state.basket, [id]: [...state.basket[id], paramCollection] }
+        }
       }
       return {
         ...state,
-        basket: [...state.basket, { ...action.product, amount: 1 }],
-      };
+        basket: { ...state.basket, [id]: [paramCollection] }
+      }
     }
     case DELETE_PRODUCT: {
       const productIndex = state.basket.findIndex(
