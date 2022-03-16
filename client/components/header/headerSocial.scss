@@ -2,7 +2,7 @@
 
 .header-social {
   font-size: 1.6em;
-  color: $social-link-color;
+  color: $light-text-color;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -10,7 +10,7 @@
   a {
     margin-left: 9px;
     text-decoration: none;
-    color: $social-link-color;
+    color: $light-text-color;
     transition: color 0.5s, transform 0.5s;
 
     &:hover {

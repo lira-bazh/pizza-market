@@ -1,0 +1,60 @@
+@import '../../assets/styles/var';
+
+.basket {
+  &__button {
+    background-color: $orange-color;
+    color: $dark-text-color;
+    border-radius: 30px;
+    border: 0;
+    padding: 8px 20px;
+    line-height: 2em;
+  }
+
+  &__button:active {
+    background-color: $dark-orange-color;
+  }
+
+  div {
+    display: inline-block;
+  }
+
+  &__price {
+    padding-right: 10px;
+    border-right: $dark-text-color 1px solid;
+  }
+
+  &__price::after {
+    content: " ₽";
+  }
+
+  &__amount {
+    opacity: 1;
+    transform: translateX(0px);
+    transition: transform 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
+    padding-left: 10px;
+
+    svg {
+      transform: rotate(135deg);
+      margin-right: 5px;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    right: 20px;
+    font-size: 1.3em;
+    transition: transform 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
+    opacity: 0;
+    transform: translateX(-5px);
+  }
+
+  &__button:hover &__amount {
+    opacity: 0;
+    transform: translateX(-2px);
+  }
+
+  &__button:hover &__arrow {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}

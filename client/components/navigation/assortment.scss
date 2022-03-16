@@ -1,0 +1,29 @@
+@import "../../assets/styles/var";
+
+.sort {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.sort-button {
+  margin-right: 10px;
+
+  input {
+    display: none;
+  }
+
+  label {
+    display: inline-block;
+    background-color: $grey-bg-color;
+    border-radius: 30px;
+    padding: 6px 20px;
+    line-height: 2em;
+  }
+
+  input:checked + label {
+    background-color: $dark-bg-color;
+    color: $text-color-dark;
+  }
+}

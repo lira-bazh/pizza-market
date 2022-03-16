@@ -1,0 +1,15 @@
+@import '../../assets/styles/var';
+
+.navigation {
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+
+  .sort {
+    flex-grow: 1;
+  }
+}

@@ -3,11 +3,13 @@ const DELETE_PRODUCT = "DELETE_PRODUCT";
 const CLEAR_BUSKET = "CLEAR_BUSKET";
 const UPLOAD_PRODUCTS = "UPLOAD_PRODUCTS";
 const CHANGE_SORT = "CHANGE_SORT";
+const CHANGE_FILTER = "CHANGE_FILTER";
 
 const initialState = {
   all: [],
   basket: {},
   sort: "title",
+  filter: "all",
   defaultPizzaSettings: [
     {
       type: "type-dough",
@@ -25,6 +27,20 @@ const initialState = {
       ],
     },
   ],
+  defaultTypes: [
+    {
+      value: "all",
+      name: "Все",
+    },
+    {
+      value: "meat",
+      name: "Мясные",
+    },
+    {
+      value: "vegetable",
+      name: "Вегетарианские",
+    },
+  ],
 };
 
 export default (state = initialState, action) => {
@@ -36,17 +52,20 @@ export default (state = initialState, action) => {
       };
     }
     case ADD_PRODUCT: {
-      const {id, ...paramCollection} = action.product
+      const { id, ...paramCollection } = action.product;
       if (id in state.basket) {
         return {
           ...state,
-          basket: { ...state.basket, [id]: [...state.basket[id], paramCollection] }
-        }
+          basket: {
+            ...state.basket,
+            [id]: [...state.basket[id], paramCollection],
+          },
+        };
       }
       return {
         ...state,
-        basket: { ...state.basket, [id]: [paramCollection] }
-      }
+        basket: { ...state.basket, [id]: [paramCollection] },
+      };
     }
     case DELETE_PRODUCT: {
       const productIndex = state.basket.findIndex(
@@ -85,6 +104,12 @@ export default (state = initialState, action) => {
         sort: action.sort,
       };
     }
+    case CHANGE_FILTER: {
+      return {
+        ...state,
+        filter: action.filter,
+      };
+    }
     default:
       return state;
   }
@@ -108,4 +133,8 @@ export function clearBasket() {
 
 export function changeSort(sort) {
   return { type: CHANGE_SORT, sort };
+}
+
+export function setFilter(filter) {
+  return { type: CHANGE_FILTER, filter };
 }

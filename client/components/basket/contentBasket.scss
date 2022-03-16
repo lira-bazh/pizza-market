@@ -1,0 +1,7 @@
+@import '../../assets/styles/var';
+
+.basket-page {
+  @extend %width-offset;
+  flex-grow: 1;
+
+}

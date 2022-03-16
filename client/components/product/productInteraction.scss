@@ -46,12 +46,12 @@
 
     button:hover {
       background-color: $orange-color;
-      color: $text-color-dark-bg;
+      color: $dark-text-color;
     }
 
     button:active {
       background-color: $dark-orange-color;
-      color: $text-color-dark-bg;
+      color: $dark-text-color;
     }
 
   }
@@ -59,7 +59,7 @@
   &__counter {
     display: inline-block;
     background-color: $orange-color;
-    color: $text-color-dark-bg;
+    color: $dark-text-color;
     border-radius: 47%;
     margin-left: 5px;
     line-height: 1.5em;
@@ -67,7 +67,7 @@
   }
 
   &__add button:hover &__counter{
-    background-color: $text-color-dark-bg;
+    background-color: $dark-text-color;
     color: $orange-color;
   }
 

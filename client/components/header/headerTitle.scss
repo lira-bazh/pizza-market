@@ -1,10 +1,12 @@
-
+@import '../../assets/styles/var';
 
 .header-title {
+  text-decoration: none;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  color: $light-text-color;
 
   &__content {
     margin-left: 10px;
