@@ -1,7 +1,22 @@
-@import '../../assets/styles/var';
+@import "../../assets/styles/var";
 
 .basket-page {
   @extend %width-offset;
   flex-grow: 1;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .wrapper {
+    width: 80%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
 }
+

@@ -1,15 +1,27 @@
 import React from "react";
 import { useSelector } from "react-redux";
+
 import EmptyBasket from "./emptyBasket";
+import HeaderBasket from "./header";
+import ListOfBasket from "./listOfBasket";
+import FooterBasket from "./footerBasket";
 import "./contentBasket.scss";
 
 const ContentBasket = () => {
-  const basket = useSelector((s) => s.products.basket);
+  const basketLen = useSelector((s) => Object.keys(s.products.basket).length);
 
-  if (Object.keys(basket).length === 0) {
+  if (!basketLen) {
     return <EmptyBasket />;
   }
-  return <div className="basket-page">It's basket!</div>;
+  return (
+    <div className="basket-page">
+      <div className="wrapper">
+        <HeaderBasket />
+        <ListOfBasket />
+        <FooterBasket />
+      </div>
+    </div>
+  );
 };
 
 ContentBasket.propTypes = {};

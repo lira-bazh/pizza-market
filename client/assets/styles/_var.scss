@@ -3,12 +3,25 @@
   margin: 0 auto;
 }
 
+%form-of-button {
+  border-radius: 30px;
+  padding: 6px 20px;
+  line-height: 2em;
+}
 
 $text-color-dark2: rgba(255, 255, 255, 0.7);
 $text-color-dark: rgba(255, 255, 255, 1);
-$dark-bg-color: rgba( 0, 0, 0, 1);
-$light-text-color: rgba( 0, 0, 0, 1);
+$dark-bg-color: rgba(0, 0, 0, 1);
+$light-text-color: rgba(0, 0, 0, 1);
 $orange-color: hsl(17, 99%, 56%);
 $dark-orange-color: hsl(17, 99%, 40%);
 $dark-text-color: rgb(255, 255, 255);
 $grey-bg-color: rgb(243, 243, 243);
+$dark-grey-color: rgb(139, 139, 139);
+
+%return-button {
+  @extend %form-of-button;
+  background-color: $grey-bg-color;
+  color: $light-text-color;
+  text-decoration: none;
+}

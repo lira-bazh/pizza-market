@@ -15,11 +15,10 @@
   }
 
   label {
+    @extend %form-of-button;
     display: inline-block;
     background-color: $grey-bg-color;
-    border-radius: 30px;
-    padding: 6px 20px;
-    line-height: 2em;
+
   }
 
   input:checked + label {

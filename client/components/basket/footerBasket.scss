@@ -1,0 +1,32 @@
+@import "../../assets/styles/var";
+
+.basket-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.basket-result {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.basket-button {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+
+  .return {
+    @extend %return-button;
+  }
+
+  .order {
+    @extend %form-of-button;
+    border: 0;
+  }
+}

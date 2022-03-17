@@ -1,5 +1,5 @@
 import React from "react";
-import BasketButton from "./basketButton";
+import BasketNavButton from "./basketNavButton";
 import Assortment from "./assortment";
 import "./navMainPage.scss";
 
@@ -8,7 +8,7 @@ const NavMainPage = () => {
   return (
     <div className="navigation">
       <Assortment />
-      <BasketButton />
+      <BasketNavButton />
     </div>
   );
 };

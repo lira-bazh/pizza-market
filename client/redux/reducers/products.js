@@ -1,14 +1,21 @@
+const UPLOAD_PRODUCTS = "UPLOAD_PRODUCTS";
 const ADD_PRODUCT = "ADD_PRODUCT";
 const DELETE_PRODUCT = "DELETE_PRODUCT";
+const DELETE_ALL_PRODUCT = "DELETE_ALL_PRODUCT";
 const CLEAR_BUSKET = "CLEAR_BUSKET";
-const UPLOAD_PRODUCTS = "UPLOAD_PRODUCTS";
-const CHANGE_SORT = "CHANGE_SORT";
 const CHANGE_FILTER = "CHANGE_FILTER";
+
+function compareProduct(item1, item2) {
+  return (
+    item1.id === item2.id &&
+    item1.size === item2.size &&
+    item1["type-dough"] === item2["type-dough"]
+  );
+}
 
 const initialState = {
   all: [],
-  basket: {},
-  sort: "title",
+  basket: [],
   filter: "all",
   defaultPizzaSettings: [
     {
@@ -52,27 +59,25 @@ export default (state = initialState, action) => {
       };
     }
     case ADD_PRODUCT: {
-      const { id, ...paramCollection } = action.product;
-      if (id in state.basket) {
+      const productIndex = state.basket.findIndex((item) =>
+        compareProduct(item, action.product)
+      );
+      if (productIndex >= 0) {
+        let newBasket = [...state.basket];
+        newBasket[productIndex].amount += 1;
         return {
           ...state,
-          basket: {
-            ...state.basket,
-            [id]: [...state.basket[id], paramCollection],
-          },
+          basket: newBasket,
         };
       }
       return {
         ...state,
-        basket: { ...state.basket, [id]: [paramCollection] },
+        basket: [...state.basket, { ...action.product, amount: 1 }],
       };
     }
     case DELETE_PRODUCT: {
-      const productIndex = state.basket.findIndex(
-        (item) =>
-          item.id === action.product.id &&
-          item.size === action.product.size &&
-          item["type-dough"] === action.product["type-dough"]
+      const productIndex = state.basket.findIndex((item) =>
+        compareProduct(item, action.product)
       );
       if (productIndex >= 0) {
         if (state.basket[productIndex].amount > 1) {
@@ -92,16 +97,24 @@ export default (state = initialState, action) => {
       }
       return state;
     }
+    case DELETE_ALL_PRODUCT: {
+      const productIndex = state.basket.findIndex((item) =>
+        compareProduct(item, action.product)
+      );
+      if (productIndex >= 0) {
+        const newBasket = [...state.basket];
+        newBasket.splice(productIndex, 1);
+        return {
+          ...state,
+          basket: newBasket,
+        };
+      }
+      return state;
+    }
     case CLEAR_BUSKET: {
       return {
         ...state,
         basket: [],
-      };
-    }
-    case CHANGE_SORT: {
-      return {
-        ...state,
-        sort: action.sort,
       };
     }
     case CHANGE_FILTER: {
@@ -123,16 +136,16 @@ export function addProductToBasket(product) {
   return { type: ADD_PRODUCT, product };
 }
 
-export function removeProductFromBasket(id) {
-  return { type: DELETE_PRODUCT, id };
+export function removeProductFromBasket(product) {
+  return { type: DELETE_PRODUCT, product };
+}
+
+export function removeAllProductFromBasket(product) {
+  return { type: DELETE_ALL_PRODUCT, product };
 }
 
 export function clearBasket() {
   return { type: CLEAR_BUSKET };
-}
-
-export function changeSort(sort) {
-  return { type: CHANGE_SORT, sort };
 }
 
 export function setFilter(filter) {

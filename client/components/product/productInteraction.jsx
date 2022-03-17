@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import classnames from "classnames";
 import { addProductToBasket } from "../../redux/reducers/products";
@@ -10,9 +10,25 @@ import "./productInteraction.scss";
 const ProductInteraction = (props) => {
   const dispatch = useDispatch();
   const defaultSettings = useSelector((s) => s.products.defaultPizzaSettings);
-  const ProductInBasket = useSelector(
-    (s) => s.products.basket[props.product.id] || []
+  const arrayProductInBasket = useSelector(
+    (s) => s.products.basket.filter((item) => item.id === props.product.id) || []
   );
+
+  const countProduct = (products) => {
+    return products.reduce((acc, item) => {
+      return (acc += item.amount);
+    }, 0);
+  };
+
+  // const sumProductInBasket = countProduct(arrayProductInBasket);
+
+  const [sumProductInBasket, setSumProduct] = useState(
+    countProduct(arrayProductInBasket)
+  );
+
+  useEffect(() => {
+    setSumProduct(countProduct(arrayProductInBasket));
+  }, [arrayProductInBasket]);
 
   const getDefaultPizzaParam = (defSettings) => {
     const typeArr = defSettings.map((setting) => {
@@ -65,11 +81,11 @@ const ProductInteraction = (props) => {
             Добавить
             <span
               className={classnames({
-                interaction__counter: ProductInBasket.length !== 0,
-                interaction__counter_hidden: ProductInBasket.length === 0,
+                interaction__counter: sumProductInBasket !== 0,
+                interaction__counter_hidden: sumProductInBasket === 0,
               })}
             >
-              {ProductInBasket.length}
+              {sumProductInBasket}
             </span>
           </button>
         </div>

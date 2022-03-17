@@ -1,0 +1,30 @@
+@import "../../assets/styles/var";
+
+.basket-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &__title {
+    font-family: "Proxima Nova Bold";
+    font-size: 1.5em;
+    line-height: 2em;
+  }
+
+  &__clear {
+    @extend %form-of-button;
+    border: 0;
+    background: none;
+    color: $dark-grey-color;
+  }
+
+  &__clear:hover {
+    color: $light-text-color;
+  }
+
+  svg {
+    margin-right: 5px;
+  }
+}

@@ -2,12 +2,10 @@
 
 .basket {
   &__button {
+    @extend %form-of-button;
     background-color: $orange-color;
     color: $dark-text-color;
-    border-radius: 30px;
     border: 0;
-    padding: 8px 20px;
-    line-height: 2em;
   }
 
   &__button:active {

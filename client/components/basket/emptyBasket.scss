@@ -30,12 +30,7 @@
   }
 
   &__return-button {
-    background-color: $dark-bg-color;
-    color: $dark-text-color;
-    border-radius: 30px;
-    padding: 8px 20px;
-    line-height: 2em;
-    text-decoration: none;
+    @extend %return-button;
   }
 
 }
