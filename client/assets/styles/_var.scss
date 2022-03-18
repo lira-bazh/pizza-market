@@ -8,20 +8,45 @@
   padding: 6px 20px;
   line-height: 2em;
 }
+$white: hsl(0, 0%, 100%);
 
-$text-color-dark2: rgba(255, 255, 255, 0.7);
-$text-color-dark: rgba(255, 255, 255, 1);
-$dark-bg-color: rgba(0, 0, 0, 1);
-$light-text-color: rgba(0, 0, 0, 1);
-$orange-color: hsl(17, 99%, 56%);
-$dark-orange-color: hsl(17, 99%, 40%);
-$dark-text-color: rgb(255, 255, 255);
-$grey-bg-color: rgb(243, 243, 243);
-$dark-grey-color: rgb(139, 139, 139);
+$primary-color-h: 17;
+$primary-color-l: 99%;
+
+$primary-color-lightest: hsl($primary-color-h, $primary-color-l, 100%);
+$primary-color-light: hsl($primary-color-h, $primary-color-l, 80%);
+$primary-color-base: hsl($primary-color-h, $primary-color-l, 60%);
+$primary-color-dark: hsl($primary-color-h, $primary-color-l, 40%);
+
+$secondary-color-h: 234;
+$secondary-color-l: 15%;
+
+$primary-color-10: hsl($secondary-color-h, $secondary-color-l, 10%);
+$primary-color-20: hsl($secondary-color-h, $secondary-color-l, 20%);
+$primary-color-30: hsl($secondary-color-h, $secondary-color-l, 30%);
+$primary-color-40: hsl($secondary-color-h, $secondary-color-l, 40%);
+$primary-color-60: hsl($secondary-color-h, $secondary-color-l, 60%);
+$primary-color-70: hsl($secondary-color-h, $secondary-color-l, 70%);
+$primary-color-80: hsl($secondary-color-h, $secondary-color-l, 80%);
+$primary-color-90: hsl($secondary-color-h, $secondary-color-l, 90%);
+$primary-color-95: hsl($secondary-color-h, $secondary-color-l, 95%);
+$primary-color-100: hsl($secondary-color-h, $secondary-color-l, 100%);
+
+$text-base: $primary-color-10;
+$text-dark-bg: $primary-color-100;
+$text-colored: $primary-color-base;
 
 %return-button {
   @extend %form-of-button;
-  background-color: $grey-bg-color;
-  color: $light-text-color;
+  background-color: $primary-color-90;
+  color: $text-base;
   text-decoration: none;
+
+  &:hover {
+    background-color: $primary-color-80;
+  }
+
+  &:active {
+    background-color: $primary-color-70;
+  }
 }

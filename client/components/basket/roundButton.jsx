@@ -49,7 +49,7 @@ const RoundButton = (props) => {
     <button
       className={classNames("round-button", {
         "round-button_orange": props.type !== "delete",
-        "round-button_grey": props.type === "delete",
+        "round-button_gray": props.type === "delete",
       })}
       onClick={action}
     >

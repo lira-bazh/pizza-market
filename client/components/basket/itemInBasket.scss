@@ -22,16 +22,44 @@
   }
 
   &__title {
-    font-family: 'Proxima Nova Bold';
+    font-weight: 700;
     font-size: 1.2em;
-    color: $light-text-color;
+    color: $text-base;
   }
 
-  &__descriptin {
-    color: $dark-grey-color;
+  &__description {
+    color: $primary-color-40;
+  }
+
+  &__amount {
+    width: 13%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: space-between;
+    font-weight: 700;
   }
 
   &__price {
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: center;
+    font-weight: 700;
 
+    &::after {
+      content: " ₽";
+    }
+  }
+
+  &__delete {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: center;
   }
 }

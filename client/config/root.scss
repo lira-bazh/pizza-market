@@ -1,43 +1,16 @@
+@import '../assets/styles/var';
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap");
+
 * {
   margin: 0;
   padding: 0px;
   box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'Proxima Nova Regular';
-    src: url('../assets/fonts/ProximaNova-Regular.eot');
-    src: url('../assets/fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/ProximaNova-Regular.woff') format('woff'),
-    url('../assets/fonts/ProximaNova-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Proxima Nova Bold';
-    src: url('../assets/fonts/ProximaNova-Bold.eot');
-    src: url('../assets/fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/ProximaNova-Bold.woff') format('woff'),
-    url('../assets/fonts/ProximaNova-Bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    }
-
-@font-face {
-    font-family: 'Proxima Nova Extra Bold';
-    src: url('../assets/fonts/ProximaNova-Extrabld.eot');
-    src: url('../assets/fonts/ProximaNova-Extrabld.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/ProximaNova-Extrabld.woff') format('woff'),
-    url('../assets/fonts/ProximaNova-Extrabld.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body {
-  background-color: #FFFFFF;
+  background-color: $white;
   font-size: 16px;
   line-height: 19.49px;
   font-weight: 400;
-  font-family: 'Proxima Nova Regular', sans-serif;
+  font-family: "Nunito", sans-serif;
 }

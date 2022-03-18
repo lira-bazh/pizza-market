@@ -2,7 +2,7 @@
 
 .header-social {
   font-size: 1.6em;
-  color: $light-text-color;
+  color: $text-base;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -10,11 +10,11 @@
   a {
     margin-left: 9px;
     text-decoration: none;
-    color: $light-text-color;
+    color: $text-base;
     transition: color 0.5s, transform 0.5s;
 
     &:hover {
-      color: $dark-orange-color;
+      color: $primary-color-dark;
       transform: rotate(360deg);
     }
   }

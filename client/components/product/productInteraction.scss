@@ -1,4 +1,4 @@
-@import '../../assets/styles/var';
+@import "../../assets/styles/var";
 
 .main-page .product-item .interaction {
   min-height: 30%;
@@ -9,14 +9,12 @@
     margin-top: 10px;
     display: flex;
     flex-direction: row;
-
   }
 
   &__price {
     flex-grow: 1;
     text-align: center;
     line-height: 2em;
-    font-family: 'Proxima Nova';
   }
 
   &__price::after {
@@ -27,16 +25,16 @@
     min-width: 45%;
     display: flex;
     flex-direction: row;
-    align-items:center;
+    align-items: center;
 
     button {
       width: 100%;
       background: none;
-      border: 1px solid $orange-color;
+      border: 1px solid $primary-color-base;
       border-radius: 30px;
-      font-family: 'Proxima Nova Bold';
+      font-weight: 600;
       line-height: 2.5em;
-      color: $orange-color;
+      color: $text-colored;
       padding: 0 10px;
 
       svg {
@@ -45,35 +43,28 @@
     }
 
     button:hover {
-      background-color: $orange-color;
-      color: $dark-text-color;
+      background-color: $primary-color-base;
+      color: $text-dark-bg;
+      cursor: pointer;
     }
 
     button:active {
-      background-color: $dark-orange-color;
-      color: $dark-text-color;
+      background-color: $primary-color-dark;
+      color: $text-dark-bg;
     }
-
   }
 
   &__counter {
     display: inline-block;
-    background-color: $orange-color;
-    color: $dark-text-color;
+    background-color: $primary-color-base;
+    color: $text-dark-bg;
     border-radius: 47%;
     margin-left: 5px;
     line-height: 1.5em;
     padding: 0 7px;
   }
 
-  &__add button:hover &__counter{
-    background-color: $dark-text-color;
-    color: $orange-color;
-  }
-
-
   &__counter_hidden {
     display: none;
   }
-
 }

@@ -1,15 +1,15 @@
-@import '../../assets/styles/var';
+@import "../../assets/styles/var";
 
 .basket {
   &__button {
     @extend %form-of-button;
-    background-color: $orange-color;
-    color: $dark-text-color;
+    background-color: $primary-color-base;
+    color: $text-dark-bg;
     border: 0;
-  }
 
-  &__button:active {
-    background-color: $dark-orange-color;
+    &:active {
+      background-color: $primary-color-dark;
+    }
   }
 
   div {
@@ -18,11 +18,11 @@
 
   &__price {
     padding-right: 10px;
-    border-right: $dark-text-color 1px solid;
-  }
+    border-right: $text-dark-bg 1px solid;
 
-  &__price::after {
-    content: " ₽";
+    &::after {
+      content: " ₽";
+    }
   }
 
   &__amount {
@@ -37,15 +37,6 @@
     }
   }
 
-  &__arrow {
-    position: absolute;
-    right: 20px;
-    font-size: 1.3em;
-    transition: transform 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
-    opacity: 0;
-    transform: translateX(-5px);
-  }
-
   &__button:hover &__amount {
     opacity: 0;
     transform: translateX(-2px);
@@ -54,5 +45,14 @@
   &__button:hover &__arrow {
     opacity: 1;
     transform: translateX(0px);
+  }
+
+  &__arrow {
+    position: absolute;
+    right: 20px;
+    font-size: 1.3em;
+    transition: transform 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
+    opacity: 0;
+    transform: translateX(-5px);
   }
 }

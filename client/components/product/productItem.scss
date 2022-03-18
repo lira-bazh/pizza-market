@@ -1,4 +1,4 @@
-@import '../../assets/styles/var';
+@import "../../assets/styles/var";
 
 .main-page .product-item {
   margin-bottom: 5vh;
@@ -8,20 +8,18 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items:center;
+  align-items: center;
+  font-weight: 700;
 
-  font-family: 'Proxima Nova Bold';
-
-  img{
+  img {
     width: 95%;
   }
 
   &__title {
     min-height: 10%;
     margin: 15px 0;
-    font-family: 'Proxima Nova Extra Bold';
+    font-weight: 800;
     font-size: 1.1em;
     text-align: center;
   }
-
 }

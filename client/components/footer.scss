@@ -1,8 +1,8 @@
-@import '../assets/styles/var';
+@import "../assets/styles/var";
 
 .footer {
-  background-color: $dark-bg-color;
-  color: $text-color-dark2;
+  background-color: $primary-color-10;
+  color: $primary-color-80;
   min-height: 80px;
   margin-top: 2%;
 
@@ -32,12 +32,10 @@
 
   a {
     text-decoration: none;
-    color: $text-color-dark2;
+    color: $primary-color-80;
 
     &:hover {
-      color: $text-color-dark;
+      color: $text-dark-bg;
     }
   }
-
-
 }

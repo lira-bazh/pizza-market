@@ -9,8 +9,8 @@ const FooterBasket = () => {
   return (
     <div className="basket-footer">
       <div className="basket-result">
-        <div className="basket-result__amount">Всего пицц: <AmountInBasket /></div>
-        <div className="basket-result__price">Сумма заказа:<SumPriceInBasket /></div>
+        <div className="basket-result__amount">Всего пицц: <span className="counter"><AmountInBasket /></span></div>
+        <div className="basket-result__price">Сумма заказа: <span className="counter"><SumPriceInBasket /></span></div>
       </div>
       <div className="basket-button">
         <Link className="return" to="/">

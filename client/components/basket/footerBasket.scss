@@ -12,6 +12,28 @@
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin: 20px 0;
+
+  &__amount {
+    .counter {
+      font-weight: 700;
+
+      &::after {
+        content: " шт.";
+      }
+    }
+  }
+
+  &__price {
+    .counter {
+      color: $text-colored;
+      font-weight: 700;
+
+      &::after {
+        content: " ₽";
+      }
+    }
+  }
 }
 
 .basket-button {
@@ -28,5 +50,15 @@
   .order {
     @extend %form-of-button;
     border: 0;
+    background-color: $primary-color-base;
+    color: $text-dark-bg;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      background-color: $primary-color-dark;
+    }
   }
 }

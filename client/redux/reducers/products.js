@@ -21,8 +21,8 @@ const initialState = {
     {
       type: "type-dough",
       content: [
-        { value: "thin", text: "Тонкая", checked: "false" },
-        { value: "fat", text: "Толстая", checked: "true" },
+        { value: "thin", text: "Тонкое", checked: "false" },
+        { value: "fat", text: "Толстое", checked: "true" },
       ],
     },
     {

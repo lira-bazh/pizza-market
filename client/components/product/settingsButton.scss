@@ -1,3 +1,4 @@
+@import '../../assets/styles/var';
 
 .settings-button {
   display: inline-block;
@@ -18,20 +19,22 @@
   }
 
   label:hover {
-    background-color: rgba(255,255,255,0.3);
+    background-color: $primary-color-95;
+    cursor: pointer;
   }
 
   input:checked + label {
-    background-color: white;
-    box-shadow: 0px 2px 4px 0px #0000000A;
+    background-color: $white;
+    box-shadow: 0px 2px 4px 0px $primary-color-80;
   }
 
   input:disabled + label {
-    color: rgba(0,0,0,0.3)
+    color: $primary-color-70;
   }
 
   input:disabled + label:hover {
     background: none;
+    cursor: auto;
   }
 
 }

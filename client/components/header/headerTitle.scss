@@ -1,4 +1,4 @@
-@import '../../assets/styles/var';
+@import "../../assets/styles/var";
 
 .header-title {
   text-decoration: none;
@@ -6,7 +6,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  color: $light-text-color;
+  color: $text-base;
 
   &__content {
     margin-left: 10px;
@@ -16,7 +16,7 @@
     align-items: flex-start;
   }
   &__title {
-    font-family: 'Proxima Nova Extra Bold';
+    font-weight: 800;
     font-size: 24px;
     line-height: 29.23px;
   }

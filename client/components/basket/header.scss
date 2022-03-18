@@ -6,9 +6,10 @@
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 10px;
 
   &__title {
-    font-family: "Proxima Nova Bold";
+    font-weight: 700;
     font-size: 1.5em;
     line-height: 2em;
   }
@@ -17,11 +18,14 @@
     @extend %form-of-button;
     border: 0;
     background: none;
-    color: $dark-grey-color;
-  }
+    color: $primary-color-60;
 
-  &__clear:hover {
-    color: $light-text-color;
+    &:hover {
+      color: $primary-color-30;
+    }
+    &:active {
+      color: $primary-color-10;
+    }
   }
 
   svg {
