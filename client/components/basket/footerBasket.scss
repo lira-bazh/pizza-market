@@ -52,8 +52,11 @@
     border: 0;
     background-color: $primary-color-base;
     color: $text-dark-bg;
+    transition: all 0.3s ease;
 
     &:hover {
+      transform: scale(1.2);
+      box-shadow: 0px 2px 4px 0px $primary-color-80;
       cursor: pointer;
     }
 
