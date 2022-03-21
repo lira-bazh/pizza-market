@@ -1,19 +1,18 @@
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import FaviconsWebpackPlugin from 'favicons-webpack-plugin'
-import { resolve } from 'path'
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { resolve } from "path";
 
-const __dirname = process.cwd()
+const __dirname = process.cwd();
 
 const config = {
-  entry: './client/main.jsx',
+  entry: "./client/main.jsx",
   resolve: {
-    extensions: ['.js', '.jsx', '.json']
+    extensions: [".js", ".jsx", ".json"],
   },
   output: {
-    filename: 'assets/js/[name].bundle.js',
-    path: resolve(__dirname, 'dist'),
-    publicPath: '/'
+    filename: "assets/js/[name].bundle.js",
+    path: resolve(__dirname, "dist"),
+    publicPath: "/",
   },
   module: {
     rules: [
@@ -21,43 +20,35 @@ const config = {
         test: /\.(js|jsx)$/i,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ["@babel/preset-env"],
+          },
+        },
       },
       {
         test: /\.(sa|sc|c)ss$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader'
-        ]
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
           },
         ],
-      }
-    ]
+      },
+    ],
   },
-	plugins: [
+  plugins: [
     new MiniCssExtractPlugin({
-      filename: 'assets/css/style.css'
+      filename: "assets/css/style.css",
     }),
     new HtmlWebpackPlugin({
-      template: 'client/index.html'
+      template: "client/index.html",
+      favicon: "./client/assets/image/favicon.ico",
     }),
-    new FaviconsWebpackPlugin({
-      logo: 'client/assets/image/favicon.ico',
-      publicPath: '/',
-      prefix: 'assets/'
-    })
-  ]
-}
+  ],
+};
 
-export default config
+export default config;
