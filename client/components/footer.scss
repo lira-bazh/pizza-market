@@ -7,10 +7,10 @@
   margin-top: 2%;
 
   &__content {
-    @extend %width-offset;
-    padding: 30px 0;
     display: flex;
+    padding: 30px 0;
     flex-direction: row;
+    @extend %width-offset;
   }
 }
 

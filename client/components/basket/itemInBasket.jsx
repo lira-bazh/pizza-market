@@ -20,28 +20,32 @@ const ItemInBasket = (props) => {
   ).text;
 
   return (
-    <div className="basket-list-item">
-      <div className="basket-list-item__image">
+    <div className="product">
+      <div className="product-image">
         <img
           src={productInfo.imageUrl}
           alt={`Изображение пиццы ${productInfo.name.toLowerCase()}`}
         />
       </div>
-      <div className="basket-list-item__text">
-        <div className="basket-list-item__title">{productInfo.name}</div>
-        <div className="basket-list-item__description">{`${doughName.toLowerCase()} тесто, ${
-          props.param.size
-        } см`}</div>
+      <div className="product-content">
+        <div className="product-text">
+          <div className="product-text__title">{productInfo.name}</div>
+          <div className="product-text__description">{`${doughName.toLowerCase()} тесто, ${
+            props.param.size
+          } см`}</div>
+        </div>
+        <div className="product-buttons">
+          <div className="product-buttons__amount">
+            <RoundButton type="minus" product={props.param} />
+            <span className="counter">{props.param.amount}</span>
+            <RoundButton type="plus" product={props.param} />
+          </div>
+          <div className="product-buttons__price">
+            <span>{props.param.amount * props.param.price}</span>
+          </div>
+        </div>
       </div>
-      <div className="basket-list-item__amount">
-        <RoundButton type="minus" product={props.param} />
-        <span className="counter">{props.param.amount}</span>
-        <RoundButton type="plus" product={props.param} />
-      </div>
-      <div className="basket-list-item__price">
-        <span>{props.param.amount * props.param.price}</span>
-      </div>
-      <div className="basket-list-item__delete">
+      <div className="product-delete">
         <RoundButton type="delete" product={props.param} />
       </div>
     </div>

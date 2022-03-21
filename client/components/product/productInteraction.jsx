@@ -78,7 +78,6 @@ const ProductInteraction = (props) => {
         <div className="interaction__add">
           <button onClick={addPizzaToBasket}>
             <FontAwesomeIcon icon={faPlus} />
-            Добавить
             <span
               className={classnames({
                 interaction__counter: sumProductInBasket !== 0,

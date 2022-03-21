@@ -9,6 +9,7 @@
     margin-top: 10px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
   }
 
   &__price {
@@ -39,6 +40,11 @@
 
       svg {
         margin-right: 5px;
+
+        @include for-phone-only {
+          font-size: 1.2em;
+          margin-right: 0;
+        }
       }
     }
 
