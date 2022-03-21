@@ -57,15 +57,19 @@
 
     &__amount {
       display: flex;
-
       flex-direction: row;
       flex-wrap: nowrap;
       align-items: center;
       justify-content: space-between;
       font-weight: 700;
+      width: 8vw;
 
       span {
-        margin: 0 3px;
+        margin: 0 5px;
+      }
+
+      @include for-phone-only {
+          width: 45%;
       }
     }
 

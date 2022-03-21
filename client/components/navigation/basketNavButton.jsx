@@ -12,15 +12,17 @@ import './basketNavButton.scss'
 const BasketNavButton = () => {
 
   return (
-    <div className="basket">
+    <div className="nav-basket">
       <Link to="/basket">
-        <div className="basket__button">
-          <div className="basket__price"><SumPriceInBasket /></div>
-          <div className="basket__amount">
+        <div className="nav-basket-button">
+          <div className="nav-basket-button__price">
+            <SumPriceInBasket />
+          </div>
+          <div className="nav-basket-button__amount">
             <FontAwesomeIcon icon={faPizzaSlice} />
             <AmountInBasket />
           </div>
-          <div className="basket__arrow">
+          <div className="nav-basket-button__arrow">
             <FontAwesomeIcon icon={faArrowRightLong} />
           </div>
         </div>

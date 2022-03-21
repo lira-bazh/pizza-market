@@ -1,5 +1,7 @@
 @mixin for-phone-only {
-  @media (max-width: 800px) { @content; }
+  @media (max-width: 800px) {
+    @content;
+  }
 }
 
 %width-offset {
@@ -10,8 +12,6 @@
     width: 90%;
   }
 }
-
-
 
 $white: hsl(0, 0%, 100%);
 
@@ -48,10 +48,10 @@ $text-colored: $primary-color-base;
 }
 
 %return-button {
-  @extend %form-of-button;
   background-color: $primary-color-90;
   color: $text-base;
   text-decoration: none;
+  @extend %form-of-button;
 
   &:hover {
     background-color: $primary-color-80;
