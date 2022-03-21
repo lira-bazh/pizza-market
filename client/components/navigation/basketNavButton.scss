@@ -16,6 +16,10 @@
     padding-right: 10px;
     border-right: $text-dark-bg 1px solid;
 
+    svg {
+      margin-right: 7px;
+    }
+
     @include for-phone-only {
       border-right: 0;
       padding-right: 0;
@@ -39,12 +43,12 @@
     }
   }
 
-  &__button:hover &__amount {
+  &:hover &__amount {
     opacity: 0;
     transform: translateX(-2px);
   }
 
-  &__button:hover &__arrow {
+  &:hover &__arrow {
     opacity: 1;
     transform: translateX(0px);
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
+  faCartShopping,
   faPizzaSlice,
   faArrowRightLong,
 } from "@fortawesome/free-solid-svg-icons";
@@ -16,6 +17,7 @@ const BasketNavButton = () => {
       <Link to="/basket">
         <div className="nav-basket-button">
           <div className="nav-basket-button__price">
+            <FontAwesomeIcon icon={faCartShopping} />
             <SumPriceInBasket />
           </div>
           <div className="nav-basket-button__amount">
