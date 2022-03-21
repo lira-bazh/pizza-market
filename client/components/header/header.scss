@@ -1,12 +1,12 @@
-@import '../../assets/styles/var';
+@import "../../assets/styles/var";
 
 .header {
-  @extend %width-offset;
+  display: flex;
   min-height: 80px;
-  display:flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
 
   border-bottom: solid 1px $primary-color-90;
+  @extend %width-offset;
 }

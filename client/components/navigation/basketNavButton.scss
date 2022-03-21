@@ -1,24 +1,29 @@
 @import "../../assets/styles/var";
 
-.basket {
-  &__button {
-    @extend %form-of-button;
-    background-color: $primary-color-base;
-    color: $text-dark-bg;
-    border: 0;
+.nav-basket-button {
+  display: inline-block;
+  background-color: $primary-color-base;
+  color: $text-dark-bg;
+  border: 0;
+  @extend %form-of-button;
 
-    &:active {
-      background-color: $primary-color-dark;
-    }
-  }
-
-  div {
-    display: inline-block;
+  &:active {
+    background-color: $primary-color-dark;
   }
 
   &__price {
+    display: inline-block;
     padding-right: 10px;
     border-right: $text-dark-bg 1px solid;
+
+    svg {
+      margin-right: 7px;
+    }
+
+    @include for-phone-only {
+      border-right: 0;
+      padding-right: 0;
+    }
 
     &::after {
       content: " ₽";
@@ -26,6 +31,7 @@
   }
 
   &__amount {
+    display: inline-block;
     opacity: 1;
     transform: translateX(0px);
     transition: transform 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
@@ -37,22 +43,36 @@
     }
   }
 
-  &__button:hover &__amount {
+  &:hover &__amount {
     opacity: 0;
     transform: translateX(-2px);
   }
 
-  &__button:hover &__arrow {
+  &:hover &__arrow {
     opacity: 1;
     transform: translateX(0px);
   }
 
   &__arrow {
+    display: inline-block;
     position: absolute;
     right: 20px;
     font-size: 1.3em;
     transition: transform 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
     opacity: 0;
     transform: translateX(-5px);
+  }
+
+  @include for-phone-only {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1;
+    font-size: 1.2em;
+
+    &__amount,
+    &__arrow {
+      display: none;
+    }
   }
 }

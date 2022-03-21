@@ -3,11 +3,6 @@ import rootReducer from "./reducers/index.js";
 
 const initialState = {};
 
-let store = createStore(
-  rootReducer(),
-  initialState
-  // initialState + window.__REDUX_DEVTOOLS_EXTENSION__ &&
-  //   window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+let store = createStore(rootReducer(), initialState);
 
 export default store;

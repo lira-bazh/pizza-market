@@ -1,13 +1,18 @@
+@mixin for-phone-only {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+
 %width-offset {
   width: 80%;
   margin: 0 auto;
+
+  @include for-phone-only {
+    width: 90%;
+  }
 }
 
-%form-of-button {
-  border-radius: 30px;
-  padding: 6px 20px;
-  line-height: 2em;
-}
 $white: hsl(0, 0%, 100%);
 
 $primary-color-h: 17;
@@ -36,11 +41,17 @@ $text-base: $primary-color-10;
 $text-dark-bg: $primary-color-100;
 $text-colored: $primary-color-base;
 
+%form-of-button {
+  border-radius: 30px;
+  padding: 6px 20px;
+  line-height: 2em;
+}
+
 %return-button {
-  @extend %form-of-button;
   background-color: $primary-color-90;
   color: $text-base;
   text-decoration: none;
+  @extend %form-of-button;
 
   &:hover {
     background-color: $primary-color-80;

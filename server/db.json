@@ -118,6 +118,138 @@
         { "size": 30, "price": 487 },
         { "size": 40, "price": 803 }
       ]
+    },
+    {
+      "id": 10,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/eb6d128bbcd340e98fd4f14b377e769f_292x292.jpeg",
+      "name": "Пепперони фреш",
+      "types": ["meat"],
+      "dough": ["thin", "fat"],
+      "prices": [
+        { "size": 26, "price": 300 },
+        { "size": 30, "price": 487 },
+        { "size": 40, "price": 803 }
+      ]
+    },
+    {
+      "id": 11,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/5630c6ed3f394c7ba25e1ef79a67b7ee_292x292.jpeg",
+      "name": "Ветчина и сыр",
+      "types": ["meat"],
+      "dough": ["thin", "fat"],
+      "prices": [
+        { "size": 26, "price": 300 },
+        { "size": 30, "price": 487 },
+        { "size": 40, "price": 803 }
+      ]
+    },
+    {
+      "id": 12,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/c069fc6e169c4d4eae80e319b1d979e7_292x292.jpeg",
+      "name": "Брусника с ананасами",
+      "types": ["vegetable"],
+      "dough": ["thin", "fat"],
+      "prices": [
+        { "size": 26, "price": 300 },
+        { "size": 30, "price": 487 },
+        { "size": 40, "price": 803 }
+      ]
+    },
+    {
+      "id": 13,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/5b5d246f1d154bd39f606d1d72899a27_292x292.jpeg",
+      "name": "Супермясо",
+      "types": ["meat"],
+      "dough": ["thin", "fat"],
+      "prices": [
+        { "size": 26, "price": 300 },
+        { "size": 30, "price": 487 },
+        { "size": 40, "price": 803 }
+      ]
+    },
+    {
+      "id": 14,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/d23af75498eb47a8a586313792da917f_292x292.jpeg",
+      "name": "Цыпленок ранч",
+      "types": ["meat"],
+      "dough": ["thin", "fat"],
+      "prices": [
+        { "size": 26, "price": 300 },
+        { "size": 30, "price": 487 },
+        { "size": 40, "price": 803 }
+      ]
+    },
+    {
+      "id": 15,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/5bf1c77b3ff44f93bb01c840ab35b033_292x292.jpeg",
+      "name": "Гавайская",
+      "types": ["meat"],
+      "dough": ["thin", "fat"],
+      "prices": [
+        { "size": 26, "price": 300 },
+        { "size": 30, "price": 487 },
+        { "size": 40, "price": 803 }
+      ]
+    },
+    {
+      "id": 16,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/952259c12c3b4c009320a36c4b45a8e1_292x292.jpeg",
+      "name": "Двойной цыпленок",
+      "types": ["meat"],
+      "dough": ["thin", "fat"],
+      "prices": [
+        { "size": 26, "price": 300 },
+        { "size": 30, "price": 487 },
+        { "size": 40, "price": 803 }
+      ]
+    },
+    {
+      "id": 17,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/3e4065bbc610451f9441a9ced2426f23_292x292.jpeg",
+      "name": "Фрикадельки и грибы",
+      "types": ["meat"],
+      "dough": ["thin", "fat"],
+      "prices": [
+        { "size": 26, "price": 300 },
+        { "size": 30, "price": 487 },
+        { "size": 40, "price": 803 }
+      ]
+    },
+    {
+      "id": 18,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/01735d5a70154bd3884899030a671629_292x292.jpeg",
+      "name": "Сырный цыпленок",
+      "types": ["meat"],
+      "dough": ["thin", "fat"],
+      "prices": [
+        { "size": 26, "price": 300 },
+        { "size": 30, "price": 487 },
+        { "size": 40, "price": 803 }
+      ]
+    },
+    {
+      "id": 19,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/2ac448e39ba24623a33c1d8d50b69ef8_292x292.jpeg",
+      "name": "Диабло 🌶️",
+      "types": ["meat"],
+      "dough": ["thin", "fat"],
+      "prices": [
+        { "size": 26, "price": 300 },
+        { "size": 30, "price": 487 },
+        { "size": 40, "price": 803 }
+      ]
+    },
+    {
+      "id": 20,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/17f215303faf4fbc86941e27debee436_292x292.jpeg",
+      "name": "Полосатая",
+      "types": ["meat"],
+      "dough": ["thin", "fat"],
+      "prices": [
+        { "size": 26, "price": 300 },
+        { "size": 30, "price": 487 },
+        { "size": 40, "price": 803 }
+      ]
     }
   ]
 }
