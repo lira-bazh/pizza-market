@@ -3,7 +3,7 @@ import './footer.scss'
 
 const Footer = () => {
   return(
-    <div className="footer">
+    <footer className="footer">
       <div className="footer__content">
         <div className="navigation-links">
           <ul className="navigation-links__list">
@@ -19,7 +19,7 @@ const Footer = () => {
         </div>
         <div className="navigation-apps"></div>
       </div>
-    </div>
+    </footer>
   );
 };
 
