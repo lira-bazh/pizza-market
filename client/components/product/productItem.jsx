@@ -3,9 +3,9 @@ import ProductInteraction from "./productInteraction"
 import "./productItem.scss";
 
 const ProductItem = (props) => {
-
+  // console.log(props.product.id, "Я родился")
   return (
-    <div className="product-item">
+    <div className="product-item" ref={props.inputRef}>
       <img
         src={props.product.imageUrl}
         alt={`Пицца ${props.product.name.toLowerCase()}`}
