@@ -3,33 +3,15 @@ import ProductInteraction from "./productInteraction"
 import "./productItem.scss";
 
 const ProductItem = (props) => {
-  function getPrice(size) {
-    return this.prices.find((item) => item.size === +size).price;
-  }
-
-  const product = { ...props.product, getPrice };
-
-  const contentImg = (
-    <img src={product.imageUrl} alt={`Пицца ${product.name.toLowerCase()}`} />
-  );
-  const contentTitle = (
-    <div className="product-item__title">{product.name}</div>
-  );
-
-  if (props.isLast) {
-    return (
-      <div className="product-item" ref={props.inputRef}>
-        {contentImg}
-        {contentTitle}
-        <ProductInteraction product={product} />
-      </div>
-    );
-  }
+  // console.log(props.product.id, "Я родился")
   return (
-    <div className="product-item">
-      {contentImg}
-      {contentTitle}
-      <ProductInteraction product={product} />
+    <div className="product-item" ref={props.inputRef}>
+      <img
+        src={props.product.imageUrl}
+        alt={`Пицца ${props.product.name.toLowerCase()}`}
+      />
+      <div className="product-item__title">{props.product.name}</div>
+      <ProductInteraction product={props.product} />
     </div>
   );
 };

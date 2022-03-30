@@ -22,8 +22,10 @@ middleware.forEach((it) => server.use(it));
 
 server.get("/api/data/:fromID/:toID", (req, res) => {
   const { fromID, toID } = req.params;
+  console.log(fromID, toID);
   fs.readFile(fileData, { encoding: "utf8" }).then(
     (text) => {
+      // console.log(text);
       res.json(JSON.parse(text).pizzas.slice(fromID, toID));
     },
     (error) => {

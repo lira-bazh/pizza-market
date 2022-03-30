@@ -15,7 +15,7 @@ function compareProduct(item1, item2) {
 
 const initialState = {
   all: [],
-  sizePortionToLoad: 5,
+  sizePortionToLoad: 10,
   basket: [],
   filter: "all",
   defaultPizzaSettings: [
@@ -134,7 +134,6 @@ export default (state = initialState, action) => {
 };
 
 export function uploadProducts(products) {
-  console.log("uploadProducts", products);
   return { type: UPLOAD_PRODUCTS, products };
 }
 
