@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { uploadProducts } from "../redux/reducers/products";
@@ -7,17 +7,8 @@ import ProductItem from "./product/productItem";
 import "./contentMainPage.scss";
 
 const ContentMainPage = () => {
-  const numGoodsToLoad = useSelector((s) => s.products.numGoodsToLoad);
-  const startGoodsToLoad = useSelector((s) => s.products.startGoodsToLoad);
-  const [startNum, setStartNum] = useState(startGoodsToLoad);
-  const [isLoading, setLoadingStatus] = useState(false);
-  const [emptyBase, setBaseEmptyStatus] = useState(false);
-  // const [progressRead, setProgressread] = useState(false);
-  const urlGetData = `/api/data/`;
+  const urlGetData = "/api/data";
   const filter = useSelector((s) => s.products.filter);
-
-  const nameField = React.useRef(null);
-  console.log(nameField.current);
 
   const useFilter = (element, filterType) => {
     if (filterType === "all") {
@@ -35,22 +26,9 @@ const ContentMainPage = () => {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    if (isLoading || emptyBase) return;
-
-    setLoadingStatus(true);
-    axios
-      .get(`${urlGetData}/${startNum}/${startNum + numGoodsToLoad}`)
-      .then((it) => {
-        if (it.data.length < numGoodsToLoad) {
-          setBaseEmptyStatus(true);
-        }
-        if (it.data.length > 0) {
-          dispatch(uploadProducts(it.data));
-          setStartNum(startNum + numGoodsToLoad);
-        }
-      });
-
-    setLoadingStatus(false);
+    axios.get(urlGetData).then((it) => {
+      dispatch(uploadProducts(it.data.pizzas));
+    });
   }, []);
 
   function getPrice(size) {
