@@ -3,20 +3,4 @@
 .main-page {
   flex-grow: 1;
   @extend %width-offset;
-
-  &__content-title {
-    margin: 30px 0;
-    font-weight: 800;
-    font-size: 2em;
-    line-height: 2em;
-  }
-
-  &__content-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-    align-content:flex-start;
-    justify-content: flex-start;
-    gap: 2px;
-  }
 }

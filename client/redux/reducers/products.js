@@ -15,6 +15,7 @@ function compareProduct(item1, item2) {
 
 const initialState = {
   all: [],
+  sizePortionToLoad: 5,
   basket: [],
   filter: "all",
   defaultPizzaSettings: [
@@ -48,6 +49,10 @@ const initialState = {
       name: "Вегетарианские",
     },
   ],
+  optionsObserver: {
+    root: null,
+    threshold: 0.5,
+  },
 };
 
 export default (state = initialState, action) => {
@@ -55,7 +60,7 @@ export default (state = initialState, action) => {
     case UPLOAD_PRODUCTS: {
       return {
         ...state,
-        all: action.products,
+        all: [...state.all, ...action.products],
       };
     }
     case ADD_PRODUCT: {
