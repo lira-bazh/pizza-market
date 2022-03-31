@@ -37,6 +37,7 @@ const ListProductOnMainPage = () => {
     const fullUrl = `${urlGetData}/${startNumPortionToLoad}/${
       startNumPortionToLoad + sizePortionToLoad
     }`;
+
     axios.get(fullUrl).then((it) => {
       if (it.data.length < sizePortionToLoad) {
         emptyBase = true;
@@ -52,6 +53,7 @@ const ListProductOnMainPage = () => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         getPortionFromAPI();
+        lastElementObserver.unobserve(entry.target);
       }
     });
   }, optionsObserver);
