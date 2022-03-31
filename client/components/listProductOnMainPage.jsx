@@ -1,4 +1,4 @@
-import React, { createRef, useEffect, useCallback } from "react";
+import React, { createRef, useEffect, useMemo } from "react";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { uploadProducts } from "../redux/reducers/products";
@@ -23,10 +23,9 @@ const ListProductOnMainPage = () => {
     return element.types.includes(inputFilter);
   }
 
-  const goodsAfterFilter = useCallback(
-    goods.filter((item) => useFilter(item, filterType)),
-    [goods, filterType]
-  );
+  const goodsAfterFilter = useMemo(() => {
+    goods.filter((item) => useFilter(item, filterType));
+  }, [goods, filterType]);
 
   const startNumPortionToLoad = goodsAfterFilter.length;
 
