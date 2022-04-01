@@ -24,7 +24,7 @@ const ListProductOnMainPage = () => {
   }
 
   const goodsAfterFilter = useMemo(() => {
-    goods.filter((item) => useFilter(item, filterType));
+    return goods.filter((item) => useFilter(item, filterType));
   }, [goods, filterType]);
 
   const startNumPortionToLoad = goodsAfterFilter.length;
@@ -48,9 +48,10 @@ const ListProductOnMainPage = () => {
     isLoading = false;
   };
 
-  let lastElementObserver = new IntersectionObserver((entries, observer) => {
+  let lastElementObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
+        console.log(entry.target);
         getPortionFromAPI();
         lastElementObserver.unobserve(entry.target);
       }
