@@ -1,19 +1,15 @@
-import React, { createRef, useEffect, useMemo } from "react";
-import axios from "axios";
+import React, { useCallback, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { uploadProducts } from "../redux/reducers/products";
 import ProductItem from "./product/productItem";
 import "./listProductOnMainPage.scss";
 
 const ListProductOnMainPage = () => {
-  const urlGetData = "/api/data";
+  const now = new Date();
+  console.log("render ListProductOnMainPage", +now);
+
   const dispatch = useDispatch();
   const goods = useSelector((s) => s.products.all);
-  const sizePortionToLoad = useSelector((s) => s.products.sizePortionToLoad);
-  let isLoading = false;
-  let emptyBase = false;
-  const lastProductRef = createRef();
-  const optionsObserver = useSelector((s) => s.products.optionsObserver);
   const filterType = useSelector((s) => s.products.filter);
 
   function useFilter(element, inputFilter) {
@@ -23,49 +19,14 @@ const ListProductOnMainPage = () => {
     return element.types.includes(inputFilter);
   }
 
-  const goodsAfterFilter = useMemo(() => {
-    return goods.filter((item) => useFilter(item, filterType));
-  }, [goods, filterType]);
-
-  const startNumPortionToLoad = goodsAfterFilter.length;
-
-  const getPortionFromAPI = () => {
-    if (isLoading || emptyBase) return;
-
-    isLoading = true;
-    const fullUrl = `${urlGetData}/${startNumPortionToLoad}/${
-      startNumPortionToLoad + sizePortionToLoad
-    }`;
-
-    axios.get(fullUrl).then((it) => {
-      if (it.data.length < sizePortionToLoad) {
-        emptyBase = true;
-      }
-      if (it.data.length > 0) {
-        dispatch(uploadProducts(it.data));
-      }
-    });
-    isLoading = false;
-  };
-
-  let lastElementObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        console.log(entry.target);
-        getPortionFromAPI();
-        lastElementObserver.unobserve(entry.target);
-      }
-    });
-  }, optionsObserver);
+  const goodsAfterFilter = useCallback(
+    goods.filter((item) => useFilter(item, filterType)),
+    [goods, filterType]
+  );
 
   useEffect(() => {
-    if (lastProductRef.current) {
-      lastElementObserver.observe(lastProductRef.current);
-    }
-  }, [lastProductRef]);
-
-  useEffect(() => {
-    getPortionFromAPI();
+    console.log("first load")
+    dispatch(uploadProducts());
   }, []);
 
   return (
@@ -77,8 +38,6 @@ const ListProductOnMainPage = () => {
             <ProductItem
               key={item.id.toString()}
               product={item}
-              isLast={index + 1 === startNumPortionToLoad}
-              inputRef={lastProductRef}
             />
           );
         })}

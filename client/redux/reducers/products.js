@@ -1,9 +1,13 @@
+import axios from "axios";
+
 const UPLOAD_PRODUCTS = "UPLOAD_PRODUCTS";
 const ADD_PRODUCT = "ADD_PRODUCT";
 const DELETE_PRODUCT = "DELETE_PRODUCT";
 const DELETE_ALL_PRODUCT = "DELETE_ALL_PRODUCT";
 const CLEAR_BUSKET = "CLEAR_BUSKET";
 const CHANGE_FILTER = "CHANGE_FILTER";
+const SET_BASE_STATUS = "SET_BASE_STATUS";
+const SET_START_NUM = "SET_START_NUM";
 
 function compareProduct(item1, item2) {
   return (
@@ -15,7 +19,10 @@ function compareProduct(item1, item2) {
 
 const initialState = {
   all: [],
-  sizePortionToLoad: 5,
+  emptyBase: false,
+  nextStartNum: 0,
+  sizePortionToLoad: 10,
+  urlGetData: "/api/data",
   basket: [],
   filter: "all",
   defaultPizzaSettings: [
@@ -58,9 +65,13 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case UPLOAD_PRODUCTS: {
+      if (action.products.length < state.sizePortionToLoad) {
+      }
       return {
         ...state,
         all: [...state.all, ...action.products],
+        nextStartNum: state.nextStartNum + state.sizePortionToLoad,
+        emptyBase: action.products.length < state.sizePortionToLoad,
       };
     }
     case ADD_PRODUCT: {
@@ -128,13 +139,36 @@ export default (state = initialState, action) => {
         filter: action.filter,
       };
     }
+    case SET_BASE_STATUS: {
+      return {
+        ...state,
+        emptyBase: action.param,
+      };
+    }
+    case SET_START_NUM: {
+      return {
+        ...state,
+        nextStartNum: action.num,
+      };
+    }
     default:
       return state;
   }
 };
 
-export function uploadProducts(products) {
-  return { type: UPLOAD_PRODUCTS, products };
+export function uploadProducts() {
+  return (dispatch, getState) => {
+    const store = getState().products;
+    console.log(store);
+    if (!store.emptyBase) {
+      const size = store.sizePortionToLoad;
+      const startNum = store.nextStartNum;
+      const fullUrl = `${store.urlGetData}/${startNum}/${startNum + size}`;
+      axios(fullUrl).then(({ data }) => {
+        dispatch({ type: UPLOAD_PRODUCTS, products: data });
+      });
+    }
+  };
 }
 
 export function addProductToBasket(product) {
@@ -155,4 +189,12 @@ export function clearBasket() {
 
 export function setFilter(filter) {
   return { type: CHANGE_FILTER, filter };
+}
+
+export function setBaseStatus(param) {
+  return { type: SET_BASE_STATUS, param };
+}
+
+export function setNextStartNum(num) {
+  return { type: SET_START_NUM, num };
 }

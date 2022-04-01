@@ -16,15 +16,6 @@ const ProductItem = (props) => {
     <div className="product-item__title">{product.name}</div>
   );
 
-  if (props.isLast) {
-    return (
-      <div className="product-item" ref={props.inputRef}>
-        {contentImg}
-        {contentTitle}
-        <ProductInteraction product={product} />
-      </div>
-    );
-  }
   return (
     <div className="product-item">
       {contentImg}
