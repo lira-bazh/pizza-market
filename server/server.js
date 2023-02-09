@@ -15,7 +15,7 @@ const middleware = [
   cors(),
   cookieParser(),
   express.json({ limit: "50kb" }),
-  express.static(resolve(__dirname, "dist")),
+  express.static("public"),
 ];
 
 middleware.forEach((it) => server.use(it));
@@ -61,5 +61,5 @@ server.get("/*", (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Serving at http://localhost:${PORT}`);
+  // console.log(`Serving at http://localhost:${PORT}`);
 });
