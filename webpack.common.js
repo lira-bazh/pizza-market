@@ -11,7 +11,7 @@ const config = {
   },
   output: {
     filename: "assets/js/[name].bundle.js",
-    path: resolve(__dirname, "dist"),
+    path: resolve(__dirname, "public"),
     publicPath: "/",
   },
   module: {
