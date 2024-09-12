@@ -5,14 +5,14 @@ import { resolve } from "path";
 const __dirname = process.cwd();
 
 const config = {
-  entry: "./client/main.jsx",
+  entry: "./client/index.tsx",
   resolve: {
-    extensions: [".js", ".jsx", ".json"],
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".json"]
   },
   output: {
     filename: "assets/js/[name].bundle.js",
     path: resolve(__dirname, "public"),
-    publicPath: "/",
+    publicPath: "/"
   },
   module: {
     rules: [
@@ -22,33 +22,43 @@ const config = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"],
-          },
-        },
+            presets: ["@babel/preset-env"]
+          }
+        }
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        use: ["babel-loader", "ts-loader"],
+        exclude: /node_modules/
       },
       {
         test: /\.(sa|sc|c)ss$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          "style-loader",
+          "css-loader",
+          "sass-loader"
+        ]
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
-            loader: "file-loader",
-          },
-        ],
-      },
-    ],
+            loader: "file-loader"
+          }
+        ]
+      }
+    ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "assets/css/style.css",
+      filename: "assets/css/style.css"
     }),
     new HtmlWebpackPlugin({
       template: "client/index.html",
-      favicon: "./client/assets/image/favicon.ico",
-    }),
-  ],
+      favicon: "./client/assets/image/favicon.ico"
+    })
+  ]
 };
 
 export default config;

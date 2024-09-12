@@ -1,13 +1,12 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { resolve } from "path";
 import { promises as fs } from "fs";
 
-import { Html } from "../client/html.js";
+import { Html } from "./html.js";
 
 const server = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8082;
 const __dirname = process.cwd();
 const fileData = `${__dirname}/server/db.json`;
 
@@ -15,7 +14,7 @@ const middleware = [
   cors(),
   cookieParser(),
   express.json({ limit: "50kb" }),
-  express.static("public"),
+  express.static("public")
 ];
 
 middleware.forEach((it) => server.use(it));
@@ -49,13 +48,13 @@ server.get("/", (req, res) => {
 
 server.get("/*", (req, res) => {
   const initialState = {
-    location: req.url,
+    location: req.url
   };
 
   res.send(
     Html({
       body: "",
-      initialState,
+      initialState
     })
   );
 });
