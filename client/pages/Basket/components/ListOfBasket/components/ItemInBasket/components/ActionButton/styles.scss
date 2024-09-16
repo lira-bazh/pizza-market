@@ -1,0 +1,46 @@
+.action-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: none;
+  border-width: 2px;
+  border-style: solid;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &_orange {
+    border-color: $primary-color-base;
+    color: $text-colored;
+
+    &:hover {
+      border-color: $primary-color-base;
+      background-color: $primary-color-base;
+      color: $text-dark-bg;
+    }
+
+    &:active {
+      border-color: $primary-color-dark;
+      background-color: $primary-color-dark;
+      color: $text-dark-bg;
+    }
+  }
+
+  &_gray {
+    border-color: $primary-color-60;
+    color: $primary-color-60;
+
+    &:hover {
+      border-color: $primary-color-40;
+      background-color: $primary-color-40;
+      color: $text-dark-bg;
+    }
+
+    &:active {
+      border-color: $primary-color-30;
+      background-color: $primary-color-30;
+      color: $text-dark-bg;
+    }
+  }
+}

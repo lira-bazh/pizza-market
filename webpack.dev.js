@@ -1,13 +1,13 @@
-import { merge } from 'webpack-merge'
+import { merge } from 'webpack-merge';
 
-import common from './webpack.common.js' //подключаем общий вебпак
+import common from './webpack.common.js'; //подключаем общий вебпак
 
-const PORT = 8080
+const PORT = 8082;
 
 const config = {
   mode: 'development',
   optimization: {
-    usedExports: true
+    usedExports: true,
   },
   devServer: {
     hot: true,
@@ -17,14 +17,14 @@ const config = {
     client: {
       overlay: {
         warnings: false,
-        errors: true
-      }
+        errors: true,
+      },
     },
     proxy: {
       context: ['/api'],
-      target: `http://localhost:${PORT}`
-    }
-  }
-}
+      target: `http://localhost:${PORT}`,
+    },
+  },
+};
 
-export default merge(common, config)
+export default merge(common, config);

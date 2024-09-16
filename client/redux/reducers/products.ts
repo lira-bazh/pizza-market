@@ -1,4 +1,7 @@
 import axios from "axios";
+import { PORTION_TO_LOAD, BASE_URL } from '@/constants';
+import { selectstopLoadStatus, selectNextStartNum } from '../selectors/products';
+import { EPizzaTypes, IProduct, IProductBasket, IStateProducts, IState, AppDispatch, EPizzaParams } from '@/types';
 
 const UPLOAD_PRODUCTS = "UPLOAD_PRODUCTS";
 const ADD_PRODUCT = "ADD_PRODUCT";
@@ -12,96 +15,56 @@ const SET_START_NUM = "SET_START_NUM";
 function compareProduct(item1, item2) {
   return (
     item1.id === item2.id &&
-    item1.size === item2.size &&
-    item1["type-dough"] === item2["type-dough"]
+    item1[EPizzaParams.SIZE] === item2[EPizzaParams.SIZE] &&
+    item1[EPizzaParams.DOUGH] === item2[EPizzaParams.DOUGH]
   );
 }
 
-const initialState = {
-  all: [],
-  emptyBase: false,
+const initialState: IStateProducts = {
+  data: [],
+  stopLoad: false,
   nextStartNum: 0,
-  sizePortionToLoad: 10,
-  urlGetData: "/api/data",
   basket: [],
-  filter: "all",
-  defaultPizzaSettings: [
-    {
-      type: "type-dough",
-      content: [
-        { value: "thin", text: "Тонкое", checked: "false" },
-        { value: "fat", text: "Толстое", checked: "true" },
-      ],
-    },
-    {
-      type: "size",
-      content: [
-        { value: "26", text: "26 см.", checked: "false" },
-        { value: "30", text: "30 см.", checked: "true" },
-        { value: "40", text: "40 см.", checked: "false" },
-      ],
-    },
-  ],
-  defaultTypes: [
-    {
-      value: "all",
-      name: "Все",
-    },
-    {
-      value: "meat",
-      name: "Мясные",
-    },
-    {
-      value: "vegetable",
-      name: "Вегетарианские",
-    },
-  ],
-  optionsObserver: {
-    root: null,
-    threshold: 0.5,
-  },
+  filter: EPizzaTypes.ALL,
 };
 
-export default (state = initialState, action) => {
-  switch (action.type) {
+export default (state: IStateProducts = initialState, action) => {
+  const { type, payload } = action;
+  switch (type) {
     case UPLOAD_PRODUCTS: {
-      if (action.products.length < state.sizePortionToLoad) {
+      if (payload.length < PORTION_TO_LOAD) {
       }
       return {
         ...state,
-        all: [...state.all, ...action.products],
-        nextStartNum: state.nextStartNum + state.sizePortionToLoad,
-        emptyBase: action.products.length < state.sizePortionToLoad,
+        data: [...state.data, ...payload],
+        nextStartNum: state.nextStartNum + PORTION_TO_LOAD,
+        stopLoad: payload.length < PORTION_TO_LOAD,
       };
     }
     case ADD_PRODUCT: {
-      const productIndex = state.basket.findIndex((item) =>
-        compareProduct(item, action.product)
-      );
+      const productIndex = state.basket.findIndex(item => compareProduct(item, payload));
       if (productIndex >= 0) {
-        let newBasket = [...state.basket];
-        newBasket[productIndex].amount += 1;
+        const basket = [...state.basket];
+        basket[productIndex] = { ...state.basket[productIndex], amount: state.basket[productIndex].amount + 1 };
         return {
           ...state,
-          basket: newBasket,
+          basket,
         };
       }
       return {
         ...state,
-        basket: [...state.basket, { ...action.product, amount: 1 }],
+        basket: [...state.basket, { ...payload, amount: 1 }],
       };
     }
     case DELETE_PRODUCT: {
-      const productIndex = state.basket.findIndex((item) =>
-        compareProduct(item, action.product)
-      );
+      const productIndex = state.basket.findIndex(item => compareProduct(item, payload));
       if (productIndex >= 0) {
         if (state.basket[productIndex].amount > 1) {
-          const newBasket = [...state.basket];
-          newBasket[productIndex].amount -= 1;
+          const basket = [...state.basket];
+          basket[productIndex] = { ...state.basket[productIndex], amount: state.basket[productIndex].amount - 1 };
           return {
             ...state,
-            basket: newBasket,
+            basket,
           };
         }
         const newBasket = [...state.basket];
@@ -114,9 +77,7 @@ export default (state = initialState, action) => {
       return state;
     }
     case DELETE_ALL_PRODUCT: {
-      const productIndex = state.basket.findIndex((item) =>
-        compareProduct(item, action.product)
-      );
+      const productIndex = state.basket.findIndex(item => compareProduct(item, payload));
       if (productIndex >= 0) {
         const newBasket = [...state.basket];
         newBasket.splice(productIndex, 1);
@@ -136,19 +97,19 @@ export default (state = initialState, action) => {
     case CHANGE_FILTER: {
       return {
         ...state,
-        filter: action.filter,
+        filter: payload,
       };
     }
     case SET_BASE_STATUS: {
       return {
         ...state,
-        emptyBase: action.param,
+        stopLoad: payload,
       };
     }
     case SET_START_NUM: {
       return {
         ...state,
-        nextStartNum: action.num,
+        nextStartNum: payload,
       };
     }
     default:
@@ -157,13 +118,13 @@ export default (state = initialState, action) => {
 };
 
 export function uploadProducts() {
-  return (dispatch, getState) => {
-    const store = getState().products;
-    console.log(store);
-    if (!store.emptyBase) {
-      const size = store.sizePortionToLoad;
-      const startNum = store.nextStartNum;
-      const fullUrl = `${store.urlGetData}/${startNum}/${startNum + size}`;
+  return (dispatch: AppDispatch, getState: () => IState) => {
+    const stopLoad = selectstopLoadStatus(getState());
+    const nextStartNum = selectNextStartNum(getState());
+
+    if (!stopLoad) {
+      const size = PORTION_TO_LOAD;
+      const fullUrl = `${BASE_URL}/${nextStartNum}/${nextStartNum + size}`;
       axios(fullUrl).then(({ data }) => {
         dispatch({ type: UPLOAD_PRODUCTS, products: data });
       });
@@ -171,30 +132,30 @@ export function uploadProducts() {
   };
 }
 
-export function addProductToBasket(product) {
-  return { type: ADD_PRODUCT, product };
+export function addProductToBasket(payload) {
+  return { type: ADD_PRODUCT, payload };
 }
 
-export function removeProductFromBasket(product) {
-  return { type: DELETE_PRODUCT, product };
+export function removeProductFromBasket(payload) {
+  return { type: DELETE_PRODUCT, payload };
 }
 
-export function removeAllProductFromBasket(product) {
-  return { type: DELETE_ALL_PRODUCT, product };
+export function removeAllProductFromBasket(payload) {
+  return { type: DELETE_ALL_PRODUCT, payload };
 }
 
 export function clearBasket() {
   return { type: CLEAR_BUSKET };
 }
 
-export function setFilter(filter) {
-  return { type: CHANGE_FILTER, filter };
+export function setFilter(payload) {
+  return { type: CHANGE_FILTER, payload };
 }
 
-export function setBaseStatus(param) {
-  return { type: SET_BASE_STATUS, param };
+export function setBaseStatus(payload) {
+  return { type: SET_BASE_STATUS, payload };
 }
 
-export function setNextStartNum(num) {
-  return { type: SET_START_NUM, num };
+export function setNextStartNum(payload) {
+  return { type: SET_START_NUM, payload };
 }

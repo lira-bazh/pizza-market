@@ -2,9 +2,9 @@
   "pizzas": [
     {
       "id": 0,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
-      "name": "Пепперони Фреш с перцем",
-      "types": ["meat"],
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D612FC7B7FCA5BE822752BEE1E5.avif",
+      "name": "Пепперони Фреш",
+      "type": "meat",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 300 },
@@ -14,9 +14,9 @@
     },
     {
       "id": 1,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D610D2925109AB2E1C92CC5383C.avif",
       "name": "Сырная",
-      "types": ["vegetable"],
+      "type": "vegetable",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 270 },
@@ -26,9 +26,9 @@
     },
     {
       "id": 2,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/6652fec1-04df-49d8-8744-232f1032c44b.jpg",
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D6110059795842D40396BCF1E73.avif",
       "name": "Цыпленок барбекю",
-      "types": ["meat"],
+      "type": "meat",
       "dough": ["fat"],
       "prices": [
         { "size": 30, "price": 487 },
@@ -37,9 +37,9 @@
     },
     {
       "id": 3,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/af553bf5-3887-4501-b88e-8f0f55229429.jpg",
-      "name": "Кисло-сладкий цыпленок",
-      "types": ["meat"],
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D6175C10773BFE36E56D48DF7E3.avif",
+      "name": "Пицца Жюльен",
+      "type": "meat",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 300 },
@@ -49,9 +49,9 @@
     },
     {
       "id": 4,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
-      "name": "Чизбургер-пицца",
-      "types": ["meat"],
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D61706D472F9A5D71EB94149304.avif",
+      "name": "Чоризо фреш",
+      "type": "meat",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 422 },
@@ -61,9 +61,9 @@
     },
     {
       "id": 5,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/1e1a6e80-b3ba-4a44-b6b9-beae5b1fbf27.jpg",
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D6122BB3424B593BB15EACE3197.avif",
       "name": "Крэйзи пепперони",
-      "types": ["meat"],
+      "type": "meat",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 437 },
@@ -73,9 +73,9 @@
     },
     {
       "id": 6,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d2e337e9-e07a-4199-9cc1-501cc44cb8f8.jpg",
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D610A62D78598406363A9A8AD65.avif",
       "name": "Пепперони",
-      "types": ["meat"],
+      "type": "meat",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 300 },
@@ -85,9 +85,9 @@
     },
     {
       "id": 7,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D6105EF6690B86FBDE6150B5B0C.avif",
       "name": "Маргарита",
-      "types": ["vegetable"],
+      "type": "vegetable",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 300 },
@@ -97,9 +97,9 @@
     },
     {
       "id": 8,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/ec29465e-606b-4a04-a03e-da3940d37e0e.jpg",
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D611ADF5AAD898B8B651186E023.avif",
       "name": "Четыре сезона",
-      "types": ["meat"],
+      "type": "meat",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 350 },
@@ -109,21 +109,9 @@
     },
     {
       "id": 9,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/30367198-f3bd-44ed-9314-6f717960da07.jpg",
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D61546D8483A61A0BBAA7ADCC78.avif",
       "name": "Овощи и грибы 🌱",
-      "types": ["vegetable"],
-      "dough": ["thin", "fat"],
-      "prices": [
-        { "size": 26, "price": 300 },
-        { "size": 30, "price": 487 },
-        { "size": 40, "price": 803 }
-      ]
-    },
-    {
-      "id": 10,
-      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/eb6d128bbcd340e98fd4f14b377e769f_292x292.jpeg",
-      "name": "Пепперони фреш",
-      "types": ["meat"],
+      "type": "vegetable",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 300 },
@@ -133,9 +121,9 @@
     },
     {
       "id": 11,
-      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/5630c6ed3f394c7ba25e1ef79a67b7ee_292x292.jpeg",
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D60FDA22358AC33C6A44EB093A2.avif",
       "name": "Ветчина и сыр",
-      "types": ["meat"],
+      "type": "meat",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 300 },
@@ -145,9 +133,9 @@
     },
     {
       "id": 12,
-      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/c069fc6e169c4d4eae80e319b1d979e7_292x292.jpeg",
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE796FFF9F5E6EB14E281FC5F491EC.avif",
       "name": "Брусника с ананасами",
-      "types": ["vegetable"],
+      "type": "vegetable",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 300 },
@@ -157,9 +145,9 @@
     },
     {
       "id": 13,
-      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/5b5d246f1d154bd39f606d1d72899a27_292x292.jpeg",
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D6108E3A1C9952CD3A7F39A4D02.avif",
       "name": "Супермясо",
-      "types": ["meat"],
+      "type": "meat",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 300 },
@@ -169,9 +157,9 @@
     },
     {
       "id": 14,
-      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/d23af75498eb47a8a586313792da917f_292x292.jpeg",
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D610BBEB562BD4D48786AD87270.avif",
       "name": "Цыпленок ранч",
-      "types": ["meat"],
+      "type": "meat",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 300 },
@@ -181,9 +169,9 @@
     },
     {
       "id": 15,
-      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/5bf1c77b3ff44f93bb01c840ab35b033_292x292.jpeg",
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D617E9339CFB185921A343AD8FD.avif",
       "name": "Гавайская",
-      "types": ["meat"],
+      "type": "meat",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 300 },
@@ -193,9 +181,9 @@
     },
     {
       "id": 16,
-      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/952259c12c3b4c009320a36c4b45a8e1_292x292.jpeg",
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D614CBE0530B7234B6D7A6E5F8E.avif",
       "name": "Двойной цыпленок",
-      "types": ["meat"],
+      "type": "meat",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 300 },
@@ -205,9 +193,9 @@
     },
     {
       "id": 17,
-      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/3e4065bbc610451f9441a9ced2426f23_292x292.jpeg",
-      "name": "Фрикадельки и грибы",
-      "types": ["meat"],
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D61698827EE9B8DB6D0AEC53410.avif",
+      "name": "Бургер-пицца",
+      "type": "meat",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 300 },
@@ -217,9 +205,9 @@
     },
     {
       "id": 18,
-      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/01735d5a70154bd3884899030a671629_292x292.jpeg",
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D610E8BBB248F31270BE742B4BD.avif",
       "name": "Сырный цыпленок",
-      "types": ["meat"],
+      "type": "meat",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 300 },
@@ -229,9 +217,9 @@
     },
     {
       "id": 19,
-      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/2ac448e39ba24623a33c1d8d50b69ef8_292x292.jpeg",
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D6149EB101D8727573088FA2EFF.avif",
       "name": "Диабло 🌶️",
-      "types": ["meat"],
+      "type": "meat",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 300 },
@@ -241,9 +229,9 @@
     },
     {
       "id": 20,
-      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/17f215303faf4fbc86941e27debee436_292x292.jpeg",
-      "name": "Полосатая",
-      "types": ["meat"],
+      "imageUrl": "https://media.dodostatic.net/image/r:584x584/11EE7D6150D498419E133DF19945A00D.avif",
+      "name": "Колбаски барбекю",
+      "type": "meat",
       "dough": ["thin", "fat"],
       "prices": [
         { "size": 26, "price": 300 },

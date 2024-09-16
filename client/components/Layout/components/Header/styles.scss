@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+  min-height: 80px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: solid 1px $primary-color-90;
+  @extend %width-offset;
+}

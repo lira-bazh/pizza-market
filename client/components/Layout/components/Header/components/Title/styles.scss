@@ -1,0 +1,25 @@
+.header-title {
+  display: flex;
+  text-decoration: none;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: $text-base;
+
+  &__content {
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    @include for-phone-only {
+      font-size: 0.8em;
+    }
+  }
+  &__title {
+    font-weight: 800;
+    font-size: 1.5em;
+    line-height: 29.23px;
+  }
+}

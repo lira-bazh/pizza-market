@@ -1,0 +1,96 @@
+.product {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin-bottom: 20px;
+
+  &-image {
+    width: 10vmax;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-left: 20px;
+
+    @include for-phone-only {
+      flex-direction: column;
+    }
+  }
+
+  &-text {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+
+    &__title {
+      word-wrap: break-word;
+      font-weight: 700;
+      font-size: 1.2em;
+      color: $text-base;
+    }
+
+    &__description {
+      color: $primary-color-40;
+      word-wrap: break-word;
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    min-width: 40%;
+
+    &__amount {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      width: 8vw;
+
+      span {
+        margin: 0 5px;
+      }
+
+      @include for-phone-only {
+          width: 45%;
+      }
+    }
+
+    &__price {
+      display: flex;
+
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+
+      &::after {
+        content: " ₽";
+      }
+    }
+  }
+
+  &-remove {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}

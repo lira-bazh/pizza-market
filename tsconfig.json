@@ -9,7 +9,12 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    "plugins": [{
+      "name": "typescript-plugin-css-modules",
+    }],
+    "paths": {
+      "@/*": ["./client/*"],
+    },
   },
   "include": ["./client/**/*.ts", "./client/**/*.tsx"],
   "exclude": ["./node_modules"]

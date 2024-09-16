@@ -1,0 +1,14 @@
+.upload-content {
+  font-size: 1.5em;
+  margin-top: 2%;
+  opacity: 0.4;
+
+  &_hidden {
+    display: none;
+  }
+
+  svg {
+    display: block;
+    margin: 0 auto;
+  }
+}

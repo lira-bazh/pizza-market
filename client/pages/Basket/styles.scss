@@ -1,0 +1,12 @@
+.basket-page {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  @extend %width-offset;
+
+  @include for-phone-only {
+    width: 100%;
+  }
+}

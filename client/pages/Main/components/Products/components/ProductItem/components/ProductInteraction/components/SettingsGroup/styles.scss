@@ -1,0 +1,13 @@
+.interaction__settings {
+  width: 100%;
+  background-color: $primary-color-90;
+  border-radius: 10px;
+  padding: 5px;
+
+  .settings {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+

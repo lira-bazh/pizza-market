@@ -1,0 +1,74 @@
+.interaction {
+  min-height: 30%;
+  width: 100%;
+
+  &__result {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  &__price {
+    flex-grow: 1;
+    text-align: center;
+    line-height: 2em;
+  }
+
+  &__price::after {
+    content: " ₽";
+  }
+
+  &__add {
+    min-width: 45%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    button {
+      width: 100%;
+      background: none;
+      border: 1px solid $primary-color-base;
+      border-radius: 30px;
+      font-weight: 600;
+      line-height: 2.5em;
+      color: $text-colored;
+      padding: 0 10px;
+
+      svg {
+        margin-right: 5px;
+
+        @include for-phone-only {
+          font-size: 1.2em;
+          margin-right: 0;
+        }
+      }
+    }
+
+    button:hover {
+      background-color: $primary-color-base;
+      color: $text-dark-bg;
+      cursor: pointer;
+    }
+
+    button:active {
+      background-color: $primary-color-dark;
+      color: $text-dark-bg;
+    }
+  }
+
+  &__counter {
+    display: inline-block;
+    background-color: $primary-color-base;
+    color: $text-dark-bg;
+    border-radius: 47%;
+    margin-left: 5px;
+    line-height: 1.5em;
+    padding: 0 7px;
+  }
+
+  &__counter_hidden {
+    display: none;
+  }
+}

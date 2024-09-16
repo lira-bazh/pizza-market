@@ -1,17 +1,20 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { resolve } from "path";
+import path from "path";
 
 const __dirname = process.cwd();
 
 const config = {
   entry: "./client/index.tsx",
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx", ".json"]
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
+    alias: {
+      "@": path.join(__dirname, "./client")
+    }
   },
   output: {
     filename: "assets/js/[name].bundle.js",
-    path: resolve(__dirname, "public"),
+    path: path.resolve(__dirname, "public"),
     publicPath: "/"
   },
   module: {
@@ -34,14 +37,26 @@ const config = {
       {
         test: /\.(sa|sc|c)ss$/i,
         use: [
-          MiniCssExtractPlugin.loader,
-          "style-loader",
-          "css-loader",
-          "sass-loader"
+          { loader: "style-loader" },
+          { loader: "css-modules-typescript-loader" },
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                localIdentName: "[local]--[hash:base64:5]"
+              }
+            }
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              additionalData: '@import "/client/assets/styles/var";'
+            }
+          }
         ]
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|png)$/i,
         use: [
           {
             loader: "file-loader"

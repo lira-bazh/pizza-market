@@ -1,8 +1,11 @@
 import React from 'react'
-
-import styles from "./styles.module.scss";
+import { Header, Footer } from "./components";
+import styles from "./styles.scss";
 
 export const Layout = ({ children }) => {
-  console.log("styles", styles);
-  return <div className={styles.page}>{children}</div>;
+  return <div className={styles.page}>
+    <Header />
+    {children}
+    <Footer/>
+    </div>;
 };

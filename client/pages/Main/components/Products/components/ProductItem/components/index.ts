@@ -1,0 +1,1 @@
+export { ProductInteraction } from './ProductInteraction';

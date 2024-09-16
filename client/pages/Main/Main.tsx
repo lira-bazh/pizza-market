@@ -1,16 +1,13 @@
 import React from "react";
-// import Footer from "./footer";
-// import Header from "./header/header";
-// import Page from "./page";
-// import ContentMainPage from "./contentMainPage";
+import { Navigation, Products, UploadContent } from './components';
+import styles from './styles.scss'
 
 export const Main = () => {
   return (
-    // <Page>
-    //   <Header />
-    //   <ContentMainPage />
-    //   <Footer />
-    // </Page>
-    <div>Main</div>
+    <div className={styles['main-page']}>
+      <Navigation />
+      <Products />
+      <UploadContent />
+    </div>
   );
 };

@@ -1,0 +1,10 @@
+.navigation {
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+  background-color: $white;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+  overflow: auto;
+}

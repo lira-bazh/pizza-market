@@ -4,7 +4,7 @@
 
 <img src="https://github.com/lira-bazh/pizza-market/blob/master/screen.png" width="350">
 
-Стэк: React, Redux
+Стэк: Typescript, React, Redux-toolkit
 
 ### Фишки
 
