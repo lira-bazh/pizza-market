@@ -126,7 +126,7 @@ export function uploadProducts() {
       const size = PORTION_TO_LOAD;
       const fullUrl = `${BASE_URL}/${nextStartNum}/${nextStartNum + size}`;
       axios(fullUrl).then(({ data }) => {
-        dispatch({ type: UPLOAD_PRODUCTS, products: data });
+        dispatch({ type: UPLOAD_PRODUCTS, payload: data });
       });
     }
   };
